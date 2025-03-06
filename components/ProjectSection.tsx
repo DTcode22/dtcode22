@@ -20,7 +20,7 @@ export default function ProjectsSection() {
               className="overflow-hidden bg-card hover:shadow-lg transition-shadow flex flex-col h-full"
             >
               {/* Media Section - consistent height for all cards */}
-              <div className="h-64">
+              <div className="h-96">
                 <div
                   className={`grid ${
                     project.media.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
