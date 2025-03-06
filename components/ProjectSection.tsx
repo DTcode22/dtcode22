@@ -5,7 +5,7 @@ import { Badge } from './ui/badge';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-export default function projectsSection() {
+export default function ProjectsSection() {
   return (
     <main className="min-h-screen bg-background">
       <section className="container mx-auto">
@@ -16,16 +16,45 @@ export default function projectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="overflow-hidden bg-card hover:shadow-lg transition-shadow"
+              className="overflow-hidden bg-card hover:shadow-lg transition-shadow flex flex-col h-full"
             >
-              <div className="aspect-video relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
-                />
+              {/* Media Section - will grow to fill available space */}
+              <div
+                className={`flex-grow ${
+                  project.features.length > 0 ? 'aspect-video' : 'min-h-64'
+                }`}
+              >
+                <div
+                  className={`grid ${
+                    project.media.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
+                  } h-full`}
+                >
+                  {project.media.map((mediaItem, mediaIndex) => (
+                    <div
+                      key={mediaIndex}
+                      className="relative overflow-hidden h-full"
+                    >
+                      {mediaItem.type === 'image' ? (
+                        <img
+                          src={mediaItem.url}
+                          alt={project.title}
+                          className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <video
+                          src={mediaItem.url}
+                          className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                          autoPlay
+                          loop
+                          muted
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="p-6">
+              {/* Project Details */}
+              <div className="p-6 flex flex-col">
                 <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">
                   {project.description}
@@ -37,27 +66,33 @@ export default function projectsSection() {
                     </Badge>
                   ))}
                 </div>
-                <div className="space-y-2">
-                  {project.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex items-center text-sm text-muted-foreground"
-                    >
-                      <span className="mr-2">•</span>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
+                {project.features.length > 0 && (
+                  <div className="space-y-2">
+                    {project.features.map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-center text-sm text-muted-foreground"
+                      >
+                        <span className="mr-2">•</span>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {project.demoUrl && (
-                  <div className="flex gap-4 mt-6">
-                    <Button asChild>
+                  <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                    <Button asChild className="w-full sm:w-auto">
                       <Link href={project.demoUrl} target="_blank">
                         <ExternalLink className="mr-2" />
                         View Demo
                       </Link>
                     </Button>
                     {project.githubUrl && (
-                      <Button variant="outline" asChild>
+                      <Button
+                        variant="outline"
+                        asChild
+                        className="w-full sm:w-auto"
+                      >
                         <Link href={project.githubUrl} target="_blank">
                           <Github className="mr-2" />
                           Source Code
