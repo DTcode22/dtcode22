@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ProjectsSection() {
   return (
@@ -18,43 +19,56 @@ export default function ProjectsSection() {
               key={index}
               className="overflow-hidden bg-card hover:shadow-lg transition-shadow flex flex-col h-full"
             >
-              {/* Media Section - will grow to fill available space */}
-              <div
-                className={`flex-grow ${
-                  project.features.length > 0 ? 'aspect-video' : 'min-h-64'
-                }`}
-              >
+              {/* Media Section - consistent height for all cards */}
+              <div className="h-64">
                 <div
                   className={`grid ${
                     project.media.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
                   } h-full`}
                 >
-                  {project.media.map((mediaItem, mediaIndex) => (
-                    <div
-                      key={mediaIndex}
-                      className="relative overflow-hidden h-full"
-                    >
-                      {mediaItem.type === 'image' ? (
-                        <img
-                          src={mediaItem.url}
-                          alt={project.title}
-                          className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <video
-                          src={mediaItem.url}
-                          className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
-                          autoPlay
-                          loop
-                          muted
-                        />
-                      )}
-                    </div>
-                  ))}
+                  {project.media.map((mediaItem, mediaIndex) => {
+                    // Check if the URL is a local path (starts with "images/")
+                    const isLocalImage = mediaItem.url.startsWith('images/');
+
+                    return (
+                      <div
+                        key={mediaIndex}
+                        className="relative overflow-hidden h-full"
+                      >
+                        {mediaItem.type === 'image' ? (
+                          isLocalImage ? (
+                            // For local images using Next.js Image component
+                            <div className="relative w-full h-full">
+                              <img
+                                src={`/${mediaItem.url}`}
+                                alt={project.title}
+                                className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                              />
+                            </div>
+                          ) : (
+                            // For external images
+                            <img
+                              src={mediaItem.url}
+                              alt={project.title}
+                              className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                            />
+                          )
+                        ) : (
+                          <video
+                            src={mediaItem.url}
+                            className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
+                            autoPlay
+                            loop
+                            muted
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-              {/* Project Details */}
-              <div className="p-6 flex flex-col">
+              {/* Project Details - fixed height content area */}
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">
                   {project.description}
@@ -67,7 +81,7 @@ export default function ProjectsSection() {
                   ))}
                 </div>
                 {project.features.length > 0 && (
-                  <div className="space-y-2">
+                  <div className="space-y-2 mb-auto">
                     {project.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
