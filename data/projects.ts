@@ -44,7 +44,7 @@ const projects: Project[] = [
     ],
     tags: ['Astro', 'JavaScript', 'GSAP', 'Framer Motion'],
     demoUrl: 'https://lauferkgdesign.netlify.app/',
-    githubUrl: 'https://github.com/dtcode22/laufer',
+    githubUrl: 'https://github.com/dtcode22/lauferkg',
     features: [
       'Interactive course catalog',
       'Online booking system',
@@ -64,7 +64,7 @@ const projects: Project[] = [
     ],
     tags: ['Next.js', 'TypeScript', 'React', 'Webcam API', 'Tailwind CSS'],
     demoUrl: 'https://webcamfilter.vercel.app/',
-    githubUrl: 'https://github.com/DTcode22/dtcode22-webcamfilter',
+    githubUrl: 'https://github.com/DTcode22/webcamfilter',
     features: [
       'Real-time webcam video processing',
       'Dynamic circle pattern generation',
