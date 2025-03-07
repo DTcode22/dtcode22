@@ -33,7 +33,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: 'Laufer Auto School',
+    title: 'Laufer Driving School',
     description:
       'A modern, responsive website for a driving school featuring course information, online booking, and pricing information. Built with Astro for optimal performance and SEO optimization.',
     media: [
