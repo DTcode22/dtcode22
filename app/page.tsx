@@ -87,7 +87,7 @@ export default function Home() {
             application, or are looking to add a developer to your team
             <br /> I'm here to help bring your ideas to life.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Button asChild>
               <Link href="mailto:dejant999@gmail.com">
                 <Mail className="mr-2 h-4 w-4" />
