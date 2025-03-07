@@ -59,7 +59,7 @@ const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/images/camera2.jpg',
+        url: '/images/webcam.png',
       },
     ],
     tags: ['Next.js', 'TypeScript', 'React', 'Webcam API', 'Tailwind CSS'],
