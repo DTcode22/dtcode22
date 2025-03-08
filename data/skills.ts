@@ -10,12 +10,11 @@ const skills = {
     'Kotlin',
     'Python',
   ],
-  frameworks: ['React', 'Next.js', 'Astro', 'Svelte', 'TailwindCSS'],
+  frameworks: ['React', 'Next.js', 'Astro', 'TailwindCSS'],
   tools: [
     'Git',
     'GitHub',
     'Node.js',
-    'Figma',
     'VS Code/Cursor',
     'Linux',
     'Netlify/Vercel',
@@ -23,6 +22,7 @@ const skills = {
     'Google Search Console',
     'Google Analytics',
     'Lighthouse',
+    'Figma',
     'Docker',
   ],
 };

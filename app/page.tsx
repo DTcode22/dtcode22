@@ -43,12 +43,11 @@ export default function Home() {
           <p className="text-muted-foreground">
             Web developer with a Computer Science background, specializing in
             responsive web solutions and interactive user experiences. I build
-            smaller websites with Astro for optimized delivery, while leveraging
-            React, Next.js, and Svelte for more complex web applications. My
-            technical foundation includes Java, SQL, Firebase, PHP, and mobile
-            app development experience. Experienced in taking projects from
-            concept to deployment with focus on performance, SEO, and
-            user-centered design.
+            smaller websites with Astro for optimized delivery and larger web
+            applications with React/Next.js. My technical foundation includes
+            Java, SQL, Firebase, PHP, and mobile app development experience.
+            Experienced in taking projects from concept to deployment with focus
+            on performance, SEO, and user-centered design.
           </p>
         </Card>
 
