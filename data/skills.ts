@@ -8,7 +8,6 @@ const skills = {
     'SQL',
     'PHP',
     'Kotlin',
-    'Python',
   ],
   frameworks: ['React', 'Next.js', 'Astro', 'TailwindCSS'],
   tools: [
