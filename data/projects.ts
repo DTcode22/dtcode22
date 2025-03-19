@@ -13,26 +13,6 @@ type Project = {
 };
 const projects: Project[] = [
   {
-    title: 'Pattern Editor',
-    description:
-      'An interactive visual pattern generator with real-time parameter controls used for a costum android live wallpaper app. Features include video and json export, canvas resizing and zoom options.',
-    media: [
-      {
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2340&h=1200',
-      },
-    ],
-    tags: ['TypeScript', 'Next.js', 'Canvas', 'Math'],
-    demoUrl: 'https://pattern-editor-zhrt.vercel.app/',
-    githubUrl: 'https://github.com/dtcode22/pattern-editor',
-    features: [
-      'Real-time pattern generation',
-      'Parameter controls with live preview',
-      'Video export functionality',
-      'Configuration import/export',
-    ],
-  },
-  {
     title: 'Laufer Driving School',
     description:
       'A modern, responsive website for a driving school featuring course information, online booking, and pricing information. Built with Astro for optimal performance and SEO optimization.',
@@ -50,6 +30,26 @@ const projects: Project[] = [
       'Online booking system',
       'Animated UI components',
       'Responsive design',
+    ],
+  },
+  {
+    title: 'Pattern Editor',
+    description:
+      'An interactive visual pattern generator with real-time parameter controls used for a costum android live wallpaper app. Features include video and json export, canvas resizing and zoom options.',
+    media: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2340&h=1200',
+      },
+    ],
+    tags: ['TypeScript', 'Next.js', 'Canvas', 'Math'],
+    demoUrl: 'https://pattern-editor-zhrt.vercel.app/',
+    githubUrl: 'https://github.com/dtcode22/pattern-editor',
+    features: [
+      'Real-time pattern generation',
+      'Parameter controls with live preview',
+      'Video export functionality',
+      'Configuration import/export',
     ],
   },
   {
@@ -83,7 +83,7 @@ const projects: Project[] = [
     ],
     tags: ['Next.js', 'TypeScript', 'React', 'Three.js', 'Tailwind CSS'],
     demoUrl: 'https://themes-kappa.vercel.app/',
-    githubUrl: 'https://github.com/DTcode22/webcamfilter',
+    githubUrl: 'https://github.com/DTcode22/themes',
     features: [
       'Multiple theme options with light and dark variants',
       'Multiple background options',
@@ -122,7 +122,6 @@ const projects: Project[] = [
       'Dynamic circle pattern generation',
       'Adjustable circle size and spacing controls',
       'Front/back camera switching',
-      'Video recording with download option',
     ],
   },
 ];

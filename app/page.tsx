@@ -41,13 +41,14 @@ export default function Home() {
         <Card className="p-6">
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
           <p className="text-muted-foreground">
-            Web developer with a Computer Science background, specializing in
-            responsive web solutions and interactive user experiences. I build
-            smaller websites with Astro for optimized delivery and larger web
-            applications with React/Next.js. My technical foundation includes
-            Java, SQL, Firebase, PHP, and mobile app development experience.
-            Experienced in taking projects from concept to deployment with focus
-            on performance, SEO, and user-centered design.
+            Im a web developer with a Computer Science background with a passion
+            for crafting immersive digital experiences. I build both compact,
+            SEO-optimized websites using Astro and robust, full-featured
+            applications with React and Next.js. My technical foundation
+            includes Java, SQL, Firebase, PHP, and mobile app development
+            experience. As a freelancer, I've crafted websites directly from
+            Figma designs and from scratch, and I always dive into thorough
+            documentation to ensure precision and quality in every project.
           </p>
         </Card>
 
@@ -82,9 +83,10 @@ export default function Home() {
         <Card className="p-6">
           <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
           <p className="text-muted-foreground mb-4">
-            Ready to collaborate? Whether you need a custom website, web
-            application, or are looking to add a developer to your team
-            <br /> I'm here to help bring your ideas to life.
+            I'm open to joining innovative companies as well as collaborating on
+            freelance projects. Whether you need a custom website, a full-scale
+            web application, or a skilled developer to join your team, I'm here
+            to help turn your ideas into reality.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild>
