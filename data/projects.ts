@@ -104,26 +104,26 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/dtcode22/wpmod02',
     features: [],
   },
-  {
-    title: 'Webcam Filter',
-    description:
-      'A Next.js application that transforms webcam input into a dynamic circle pattern effect. Features real-time video processing, adjustable parameters, camera switching, and video recording capabilities.',
-    media: [
-      {
-        type: 'image',
-        url: '/images/webcam.png',
-      },
-    ],
-    tags: ['Next.js', 'TypeScript', 'React', 'Webcam API', 'Tailwind CSS'],
-    demoUrl: 'https://webcamfilter.vercel.app/',
-    githubUrl: 'https://github.com/DTcode22/webcamfilter',
-    features: [
-      'Real-time webcam video processing',
-      'Dynamic circle pattern generation',
-      'Adjustable circle size and spacing controls',
-      'Front/back camera switching',
-    ],
-  },
+  // {
+  //   title: 'Webcam Filter',
+  //   description:
+  //     'A Next.js application that transforms webcam input into a dynamic circle pattern effect. Features real-time video processing, adjustable parameters, camera switching, and video recording capabilities.',
+  //   media: [
+  //     {
+  //       type: 'image',
+  //       url: '/images/webcam.png',
+  //     },
+  //   ],
+  //   tags: ['Next.js', 'TypeScript', 'React', 'Webcam API', 'Tailwind CSS'],
+  //   demoUrl: 'https://webcamfilter.vercel.app/',
+  //   githubUrl: 'https://github.com/DTcode22/webcamfilter',
+  //   features: [
+  //     'Real-time webcam video processing',
+  //     'Dynamic circle pattern generation',
+  //     'Adjustable circle size and spacing controls',
+  //     'Front/back camera switching',
+  //   ],
+  // },
 ];
 
 export default projects;
