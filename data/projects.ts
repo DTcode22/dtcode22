@@ -53,6 +53,40 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Themes and Backgrounds',
+    description:
+      'A Next.js application that showcases multiple theme options and interactive background effects. Features include a theme switcher with light/dark modes, custom color palettes, and three dynamic background options: an interactive space particle system that responds to mouse movement, a Matrix-style green grid, and a retro synthwave grid with animated perspective.',
+    media: [
+      {
+        type: 'image',
+        url: '/images/bgs.PNG',
+      },
+    ],
+    tags: ['Next.js', 'TypeScript', 'React', 'Three.js', 'Tailwind CSS'],
+    demoUrl: 'https://themes-kappa.vercel.app/',
+    githubUrl: 'https://github.com/DTcode22/themes',
+    features: [
+      'Multiple theme options with light and dark variants',
+      'Multiple background options',
+      'Theme preferences saved in local storage',
+      'Responsive design for all screen sizes',
+    ],
+  },
+
+  {
+    title: 'Dynamic Pattern Live Wallpaper',
+    description:
+      'An Android live wallpaper that generates mesmerizing dynamic patterns with customizable parameters and multiple operational modes.',
+    media: [
+      { type: 'image', url: '/images/dynamic-pattern.gif' },
+      { type: 'image', url: '/images/dynamic-pattern-static.jpg' },
+    ],
+    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Live Wallpaper'],
+    demoUrl: 'https://github.com/dtcode22/wpmod02',
+    githubUrl: 'https://github.com/dtcode22/wpmod02',
+    features: [],
+  },
+  {
     title: 'Panning CSS Demo',
     description:
       'A minimalist Astro project showcasing a visually striking hero section with animated background panning effects and a responsive layout. Features a dynamic header and footer with custom styling.',
@@ -71,39 +105,7 @@ const projects: Project[] = [
       'Optimized build with Astro framework',
     ],
   },
-  {
-    title: 'Themes and Backgrounds',
-    description:
-      'A Next.js application that showcases multiple theme options and interactive background effects. Features include a theme switcher with light/dark modes, custom color palettes, and three dynamic background options: an interactive space particle system that responds to mouse movement, a Matrix-style green grid, and a retro synthwave grid with animated perspective.',
-    media: [
-      {
-        type: 'image',
-        url: '/images/asd.jpg',
-      },
-    ],
-    tags: ['Next.js', 'TypeScript', 'React', 'Three.js', 'Tailwind CSS'],
-    demoUrl: 'https://themes-kappa.vercel.app/',
-    githubUrl: 'https://github.com/DTcode22/themes',
-    features: [
-      'Multiple theme options with light and dark variants',
-      'Multiple background options',
-      'Theme preferences saved in local storage',
-      'Responsive design for all screen sizes',
-    ],
-  },
-  {
-    title: 'Dynamic Pattern Live Wallpaper',
-    description:
-      'An Android live wallpaper that generates mesmerizing dynamic patterns with customizable parameters and multiple operational modes.',
-    media: [
-      { type: 'image', url: '/images/dynamic-pattern.gif' },
-      { type: 'image', url: '/images/dynamic-pattern-static.jpg' },
-    ],
-    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Live Wallpaper'],
-    demoUrl: 'https://github.com/dtcode22/wpmod02',
-    githubUrl: 'https://github.com/dtcode22/wpmod02',
-    features: [],
-  },
+
   // {
   //   title: 'Webcam Filter',
   //   description:
