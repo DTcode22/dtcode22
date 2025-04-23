@@ -19,7 +19,6 @@ export default function ProjectsSection() {
               key={index}
               className="overflow-hidden bg-card hover:shadow-lg transition-shadow flex flex-col h-full"
             >
-              {/* Media Section - consistent height for all cards */}
               <div className="h-96">
                 <div
                   className={`grid ${
@@ -27,7 +26,6 @@ export default function ProjectsSection() {
                   } h-full`}
                 >
                   {project.media.map((mediaItem, mediaIndex) => {
-                    // Check if the URL is a local path (starts with "images/")
                     const isLocalImage = mediaItem.url.startsWith('images/');
 
                     return (
@@ -37,7 +35,6 @@ export default function ProjectsSection() {
                       >
                         {mediaItem.type === 'image' ? (
                           isLocalImage ? (
-                            // For local images using Next.js Image component
                             <div className="relative w-full h-full">
                               <img
                                 src={`/${mediaItem.url}`}
@@ -46,7 +43,6 @@ export default function ProjectsSection() {
                               />
                             </div>
                           ) : (
-                            // For external images
                             <img
                               src={mediaItem.url}
                               alt={project.title}
@@ -67,7 +63,6 @@ export default function ProjectsSection() {
                   })}
                 </div>
               </div>
-              {/* Project Details - fixed height content area */}
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">

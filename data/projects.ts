@@ -33,6 +33,26 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'AI Chat Application with OpenRouter',
+    description:
+      "A feature-rich chat application powered by OpenRouter's free AI models. Built with Next.js and TypeScript, it offers multiple chat sessions, model selection, document context uploading, and multimodal input support.",
+    media: [
+      {
+        type: 'image',
+        url: '/images/as.PNG',
+      },
+    ],
+    tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'OpenRouter API'],
+    demoUrl: 'https://chatapp.vercel.app/',
+    githubUrl: 'https://github.com/dtcode22/dtcode22-chatapp',
+    features: [
+      'Create and manage multiple chat sessions',
+      'Select from various AI models provided by OpenRouter',
+      'Upload text documents to provide context for the AI',
+      'Attach images to messages for multimodal models',
+    ],
+  },
+  {
     title: 'Pattern Editor',
     description:
       'An interactive visual pattern generator with real-time parameter controls used for a costum android live wallpaper app. Features include video and json export, canvas resizing and zoom options.',
@@ -69,7 +89,6 @@ const projects: Project[] = [
       'Multiple theme options with light and dark variants',
       'Multiple background options',
       'Theme preferences saved in local storage',
-      'Responsive design for all screen sizes',
     ],
   },
 
@@ -105,27 +124,6 @@ const projects: Project[] = [
       'Optimized build with Astro framework',
     ],
   },
-
-  // {
-  //   title: 'Webcam Filter',
-  //   description:
-  //     'A Next.js application that transforms webcam input into a dynamic circle pattern effect. Features real-time video processing, adjustable parameters, camera switching, and video recording capabilities.',
-  //   media: [
-  //     {
-  //       type: 'image',
-  //       url: '/images/webcam.png',
-  //     },
-  //   ],
-  //   tags: ['Next.js', 'TypeScript', 'React', 'Webcam API', 'Tailwind CSS'],
-  //   demoUrl: 'https://webcamfilter.vercel.app/',
-  //   githubUrl: 'https://github.com/DTcode22/webcamfilter',
-  //   features: [
-  //     'Real-time webcam video processing',
-  //     'Dynamic circle pattern generation',
-  //     'Adjustable circle size and spacing controls',
-  //     'Front/back camera switching',
-  //   ],
-  // },
 ];
 
 export default projects;

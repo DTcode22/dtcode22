@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background p-8">
       <div className="max-w-6xl mx-auto space-y-8">
-        {/* Hero Section */}
         <section className="space-y-4">
           <h1 className="text-4xl font-bold text-primary">DTcode22</h1>
           <p className="text-xl text-muted-foreground">
@@ -37,7 +36,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
         <Card className="p-6">
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
           <p className="text-muted-foreground">
@@ -52,7 +50,6 @@ export default function Home() {
           </p>
         </Card>
 
-        {/* Skills Section */}
         <section>
           <h2 className="text-2xl font-semibold mb-4">Skills</h2>
           <Tabs defaultValue="languages" className="w-full">
@@ -76,10 +73,8 @@ export default function Home() {
             ))}
           </Tabs>
         </section>
-        {/* Project Section */}
         <ProjectSection />
 
-        {/* Contact Section */}
         <Card className="p-6">
           <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
           <p className="text-muted-foreground mb-4">
