@@ -43,7 +43,7 @@ const projects: Project[] = [
       },
     ],
     tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'OpenRouter API'],
-    demoUrl: 'https://chatapp.vercel.app/',
+    demoUrl: 'https://chatapp-ashen-omega.vercel.app/',
     githubUrl: 'https://github.com/dtcode22/dtcode22-chatapp',
     features: [
       'Create and manage multiple chat sessions',
