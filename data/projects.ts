@@ -39,7 +39,7 @@ const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/images/as.PNG',
+        url: '/images/as2.PNG',
       },
     ],
     tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'OpenRouter API'],
@@ -73,6 +73,19 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Dynamic Pattern Live Wallpaper',
+    description:
+      'An Android live wallpaper that generates mesmerizing dynamic patterns with customizable parameters and multiple operational modes.',
+    media: [
+      { type: 'image', url: '/images/dynamic-pattern.gif' },
+      { type: 'image', url: '/images/dynamic-pattern-static.jpg' },
+    ],
+    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Live Wallpaper'],
+    demoUrl: 'https://github.com/dtcode22/wpmod02',
+    githubUrl: 'https://github.com/dtcode22/wpmod02',
+    features: [],
+  },
+  {
     title: 'Themes and Backgrounds',
     description:
       'A Next.js application that showcases multiple theme options and interactive background effects. Features include a theme switcher with light/dark modes, custom color palettes, and three dynamic background options: an interactive space particle system that responds to mouse movement, a Matrix-style green grid, and a retro synthwave grid with animated perspective.',
@@ -90,20 +103,6 @@ const projects: Project[] = [
       'Multiple background options',
       'Theme preferences saved in local storage',
     ],
-  },
-
-  {
-    title: 'Dynamic Pattern Live Wallpaper',
-    description:
-      'An Android live wallpaper that generates mesmerizing dynamic patterns with customizable parameters and multiple operational modes.',
-    media: [
-      { type: 'image', url: '/images/dynamic-pattern.gif' },
-      { type: 'image', url: '/images/dynamic-pattern-static.jpg' },
-    ],
-    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Live Wallpaper'],
-    demoUrl: 'https://github.com/dtcode22/wpmod02',
-    githubUrl: 'https://github.com/dtcode22/wpmod02',
-    features: [],
   },
   {
     title: 'Panning CSS Demo',
