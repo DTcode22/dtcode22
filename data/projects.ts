@@ -85,44 +85,6 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/dtcode22/wpmod02',
     features: [],
   },
-  {
-    title: 'Themes and Backgrounds',
-    description:
-      'A Next.js application that showcases multiple theme options and interactive background effects. Features include a theme switcher with light/dark modes, custom color palettes, and three dynamic background options: an interactive space particle system that responds to mouse movement, a Matrix-style green grid, and a retro synthwave grid with animated perspective.',
-    media: [
-      {
-        type: 'image',
-        url: '/images/bgs.PNG',
-      },
-    ],
-    tags: ['Next.js', 'TypeScript', 'React', 'Three.js', 'Tailwind CSS'],
-    demoUrl: 'https://themes-kappa.vercel.app/',
-    githubUrl: 'https://github.com/DTcode22/themes',
-    features: [
-      'Multiple theme options with light and dark variants',
-      'Multiple background options',
-      'Theme preferences saved in local storage',
-    ],
-  },
-  {
-    title: 'Panning CSS Demo',
-    description:
-      'A minimalist Astro project showcasing a visually striking hero section with animated background panning effects and a responsive layout. Features a dynamic header and footer with custom styling.',
-    media: [
-      {
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?auto=format&fit=crop&q=80&w=1920&h=1080',
-      },
-    ],
-    tags: ['Astro', 'TypeScript', 'CSS Animations', 'PostCSS'],
-    demoUrl: 'https://pancss.netlify.app/',
-    githubUrl: 'https://github.com/DTcode22/PanningCSS',
-    features: [
-      'Animated hero section with panning background image',
-      'Custom CSS overlay animation',
-      'Optimized build with Astro framework',
-    ],
-  },
 ];
 
 export default projects;
