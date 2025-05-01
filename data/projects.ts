@@ -33,26 +33,6 @@ const projects: Project[] = [
     ],
   },
   {
-    title: 'AI Chat Application with OpenRouter',
-    description:
-      "A feature-rich chat application powered by OpenRouter's free AI models. Built with Next.js and TypeScript, it offers multiple chat sessions, model selection, document context uploading, and multimodal input support.",
-    media: [
-      {
-        type: 'image',
-        url: '/images/as2.PNG',
-      },
-    ],
-    tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'OpenRouter API'],
-    demoUrl: 'https://chatapp-ashen-omega.vercel.app/',
-    githubUrl: 'https://github.com/dtcode22/dtcode22-chatapp',
-    features: [
-      'Create and manage multiple chat sessions',
-      'Select from various AI models provided by OpenRouter',
-      'Upload text documents to provide context for the AI',
-      'Attach images to messages for multimodal models',
-    ],
-  },
-  {
     title: 'Pattern Editor',
     description:
       'An interactive visual pattern generator with real-time parameter controls used for a costum android live wallpaper app. Features include video and json export, canvas resizing and zoom options.',
@@ -70,6 +50,26 @@ const projects: Project[] = [
       'Parameter controls with live preview',
       'Video export functionality',
       'Configuration import/export',
+    ],
+  },
+  {
+    title: 'AI Chat Application with OpenRouter',
+    description:
+      "A feature-rich chat application powered by OpenRouter's free AI models. Built with Next.js and TypeScript, it offers multiple chat sessions, model selection, document context uploading, and multimodal input support.",
+    media: [
+      {
+        type: 'image',
+        url: '/images/as2.PNG',
+      },
+    ],
+    tags: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'OpenRouter API'],
+    demoUrl: 'https://chatapp-ashen-omega.vercel.app/',
+    githubUrl: 'https://github.com/dtcode22/dtcode22-chatapp',
+    features: [
+      'Create and manage multiple chat sessions',
+      'Select from various AI models provided by OpenRouter',
+      'Upload text documents to provide context for the AI',
+      'Attach images to messages for multimodal models',
     ],
   },
   {
