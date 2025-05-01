@@ -53,7 +53,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: 'AI Chat Application with OpenRouter',
+    title: 'Chat Application with OpenRouter API',
     description:
       "A feature-rich chat application powered by OpenRouter's free AI models. Built with Next.js and TypeScript, it offers multiple chat sessions, model selection, document context uploading, and multimodal input support.",
     media: [
