@@ -13,6 +13,33 @@ type Project = {
 };
 const projects: Project[] = [
   {
+    title: 'theMERCURY.ai',
+    description:
+      "A sophisticated showcase web application for 'theMERCURY.ai', an AI-powered video intelligence platform. Built with Next.js, React, and TypeScript, it demonstrates advanced video analytics, threat detection, and workforce optimization capabilities. Key highlights include real-time insights simulations, interactive dashboards, and a unique dynamic multi-themed UI that adapts as the user scrolls through content sections.",
+    media: [
+      {
+        type: 'image',
+        url: '/images/as3.PNG',
+      },
+    ],
+    tags: [
+      'Next.js 15',
+      'TypeScript',
+      'Tailwind CSS 4',
+      'Framer Motion',
+      'GSAP',
+    ],
+    demoUrl: 'https://themercury.vercel.app/',
+    githubUrl: 'https://github.com/DTcode22/themercury',
+    features: [
+      'Showcases an AI-driven video analytics platform for security and operational efficiency.',
+      'Features distinct modules for Threat Detection, Work Optimization, and general AI Capabilities.',
+      'Unique dynamic multi-theme user interface that adapts to scroll position via React Context.',
+      'Smooth animations and transitions powered by Framer Motion.',
+      'Context-aware navigation bar that changes style based on the active section theme.',
+    ],
+  },
+  {
     title: 'Laufer Driving School',
     description:
       'A modern, responsive website for a driving school featuring course information, online booking, and pricing information. Built with Astro for optimal performance and SEO optimization.',
