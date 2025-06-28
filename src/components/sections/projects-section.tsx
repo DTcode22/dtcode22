@@ -1,18 +1,18 @@
-import { SectionHeader } from "@/components/shared/section-header"
-import { ProjectCard } from "@/components/shared/project-card"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { projects } from "@/data/projects"
-import { technologies } from "@/data/skills"
+import { SectionHeader } from '@/components/shared/section-header';
+import { ProjectCard } from '@/components/shared/project-card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { projects } from '@/data/projects';
+import { technologies } from '@/data/skills';
 
 export function ProjectsSection() {
-  const featuredProjects = projects.filter((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
+  const featuredProjects = projects.filter((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <div className="space-y-16">
       {/* Header */}
-      <section id="featured-projects" className="scroll-mt-8 space-y-8">
+      <section id="featured-projects" className="scroll-mt-20 space-y-8">
         <SectionHeader
           title="My Projects"
           subtitle="A showcase of my recent work and personal projects that demonstrate my skills and passion for development"
@@ -35,7 +35,7 @@ export function ProjectsSection() {
       </section>
 
       {/* Other Projects */}
-      <section id="other-projects" className="scroll-mt-8 space-y-8">
+      <section id="other-projects" className="scroll-mt-20 space-y-8">
         <h2 className="text-3xl font-bold">Other Projects</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {otherProjects.map((project, index) => (
@@ -53,7 +53,7 @@ export function ProjectsSection() {
       </section>
 
       {/* Technologies */}
-      <section id="technologies" className="scroll-mt-8 space-y-8 pb-16">
+      <section id="technologies" className="scroll-mt-20 space-y-8">
         <h2 className="text-3xl font-bold">Technologies I Use</h2>
         <div className="grid md:grid-cols-4 gap-4">
           {Object.entries(technologies).map(([category, techs]) => (
@@ -73,5 +73,5 @@ export function ProjectsSection() {
         </div>
       </section>
     </div>
-  )
+  );
 }

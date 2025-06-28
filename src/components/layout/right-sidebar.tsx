@@ -49,7 +49,7 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
       if (!mainElement) return;
 
       const scrollPosition = mainElement.scrollTop + 100; // Offset for better UX
-
+      const maxScroll = mainElement.scrollHeight - mainElement.clientHeight;
       // Find all heading elements and their positions
       const headingElements = headings
         .map((heading) => {
@@ -72,8 +72,11 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
       // Find the currently active heading
       let currentActiveHeading = '';
 
-      // Check if we're at the very top
-      if (scrollPosition < 50) {
+      // Check if we're at the very bottom - if so, highlight the last section
+      if (scrollPosition >= maxScroll - 50) {
+        currentActiveHeading =
+          headingElements[headingElements.length - 1]?.id || '';
+      } else if (scrollPosition < 50) {
         currentActiveHeading = headingElements[0]?.id || '';
       } else {
         // Find the heading that's currently in view

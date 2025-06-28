@@ -20,7 +20,7 @@ export function AboutSection() {
   return (
     <div className="space-y-16">
       {/* Introduction */}
-      <section id="introduction" className="scroll-mt-8 space-y-6">
+      <section id="introduction" className="scroll-mt-20 space-y-6">
         <div className="text-center space-y-4">
           <h1 className="text-4xl lg:text-6xl font-bold">
             Hi, I'm{' '}
@@ -36,7 +36,7 @@ export function AboutSection() {
       </section>
 
       {/* Background */}
-      <section id="background" className="scroll-mt-8 space-y-8">
+      <section id="background" className="scroll-mt-20 space-y-8">
         <h2 className="text-3xl font-bold">Background</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
@@ -70,7 +70,7 @@ export function AboutSection() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="scroll-mt-8 space-y-8">
+      <section id="skills" className="scroll-mt-20 space-y-8">
         <h2 className="text-3xl font-bold">Skills & Expertise</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {skills.map((skill) => (
@@ -93,7 +93,7 @@ export function AboutSection() {
       </section>
 
       {/* Experience */}
-      <section id="experience" className="scroll-mt-8 space-y-8">
+      <section id="experience" className="scroll-mt-20 space-y-8">
         <h2 className="text-3xl font-bold">Experience</h2>
         <div className="space-y-6">
           <Card>
@@ -138,7 +138,7 @@ export function AboutSection() {
       </section>
 
       {/* Philosophy */}
-      <section id="philosophy" className="scroll-mt-8 space-y-8 pb-16">
+      <section id="philosophy" className="scroll-mt-20 space-y-8">
         <h2 className="text-3xl font-bold">My Philosophy</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <Card>

@@ -44,7 +44,7 @@ export default function Portfolio() {
         <LeftSidebar />
 
         <main className="w-full lg:w-[64vw] h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hidden flex justify-center">
-          <div className="w-full max-w-5xl px-6 lg:px-12 py-8">
+          <div className="w-full max-w-7xl px-6 lg:px-24 md:px-12 pt-32">
             {renderMainContent()}
           </div>
         </main>
