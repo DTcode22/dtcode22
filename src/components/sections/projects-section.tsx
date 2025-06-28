@@ -53,7 +53,7 @@ export function ProjectsSection() {
       </section>
 
       {/* Technologies */}
-      <section id="technologies" className="scroll-mt-20 space-y-8 pb-32">
+      <section id="technologies" className="scroll-mt-20 space-y-8 pb-48">
         <h2 className="text-3xl font-bold">Technologies I Use</h2>
         <div className="grid md:grid-cols-4 gap-4">
           {Object.entries(technologies).map(([category, techs]) => (

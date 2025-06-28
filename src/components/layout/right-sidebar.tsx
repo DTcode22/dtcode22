@@ -44,19 +44,14 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
         sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
       if (headings.length === 0) return;
 
-      // Get the main content container
       const mainElement = document.querySelector('main');
       if (!mainElement) return;
 
-      const scrollPosition = mainElement.scrollTop + 100; // Offset for better UX
-      const maxScroll = mainElement.scrollHeight - mainElement.clientHeight;
-      // Find all heading elements and their positions
       const headingElements = headings
         .map((heading) => {
           const element = document.getElementById(heading.id);
           if (!element) return null;
 
-          // Get position relative to the main container
           const rect = element.getBoundingClientRect();
           const mainRect = mainElement.getBoundingClientRect();
           const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
@@ -64,40 +59,45 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
           return {
             id: heading.id,
             offsetTop: relativeTop,
-            element,
           };
         })
-        .filter(Boolean);
+        .filter((h): h is { id: string; offsetTop: number } => h !== null);
 
-      // Find the currently active heading
+      if (!headingElements.length) return;
+
+      const offset = 150; // The point from the top of the viewport to trigger a heading change.
+      const scrollPosition = mainElement.scrollTop;
+      const maxScroll = mainElement.scrollHeight - mainElement.clientHeight;
+
       let currentActiveHeading = '';
 
-      // Check if we're at the very bottom - if so, highlight the last section
-      if (scrollPosition >= maxScroll - 50) {
-        currentActiveHeading =
-          headingElements[headingElements.length - 1]?.id || '';
-      } else if (scrollPosition < 50) {
-        currentActiveHeading = headingElements[0]?.id || '';
-      } else {
-        // Find the heading that's currently in view
-        for (let i = headingElements.length - 1; i >= 0; i--) {
-          const heading = headingElements[i];
-          if (heading && heading.offsetTop <= scrollPosition + 50) {
-            currentActiveHeading = heading.id;
-            break;
-          }
+      // Find the last heading that is above the scroll threshold.
+      for (let i = headingElements.length - 1; i >= 0; i--) {
+        if (headingElements[i].offsetTop <= scrollPosition + offset) {
+          currentActiveHeading = headingElements[i].id;
+          break;
         }
+      }
+
+      // If scrolled to the absolute bottom, the last heading is always active.
+      // A small tolerance (e.g., 10px) is used to ensure it triggers.
+      if (scrollPosition >= maxScroll - 10) {
+        currentActiveHeading = headingElements[headingElements.length - 1].id;
+      }
+
+      // If no heading is active (i.e., we are at the very top, before the first heading),
+      // default to the first one.
+      if (!currentActiveHeading) {
+        currentActiveHeading = headingElements[0].id;
       }
 
       setActiveHeading(currentActiveHeading);
     };
 
-    // Get the main element and add scroll listener
     const mainElement = document.querySelector('main');
     if (mainElement) {
-      mainElement.addEventListener('scroll', handleScroll);
-      // Call once to set initial state
-      setTimeout(handleScroll, 100); // Small delay to ensure content is rendered
+      mainElement.addEventListener('scroll', handleScroll, { passive: true });
+      setTimeout(handleScroll, 100);
     }
 
     return () => {
@@ -113,6 +113,11 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
       sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
     if (headings.length > 0) {
       setActiveHeading(headings[0].id);
+      // Give DOM time to update before trying to scroll to top
+      setTimeout(() => {
+        const mainElement = document.querySelector('main');
+        mainElement?.scrollTo({ top: 0 });
+      }, 0);
     }
   }, [activeSection]);
 
@@ -121,14 +126,12 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
     const mainElement = document.querySelector('main');
 
     if (element && mainElement) {
-      // Calculate the position relative to the main container
       const rect = element.getBoundingClientRect();
       const mainRect = mainElement.getBoundingClientRect();
       const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
 
-      // Scroll the main container to the element with some offset
       mainElement.scrollTo({
-        top: relativeTop - 20,
+        top: relativeTop - 100, // Adjusted offset for better scroll-to position
         behavior: 'smooth',
       });
     }
@@ -151,7 +154,7 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
                 {/* Progress indicator line */}
                 <div className="absolute left-0 top-0 bottom-0 w-px bg-border"></div>
 
-                {currentHeadings.map((heading, index) => (
+                {currentHeadings.map((heading) => (
                   <div key={heading.id} className="relative">
                     {/* Active indicator dot */}
                     <div
@@ -173,7 +176,7 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
                       className={cn(
                         'block w-full text-left text-sm py-2 pl-6 pr-2 rounded-r transition-all duration-200 hover:bg-muted/50',
                         activeHeading === heading.id
-                          ? 'text-primary font-medium bg-primary/5 border-r-2 border-primary'
+                          ? 'text-primary font-medium bg-primary/5'
                           : 'text-muted-foreground hover:text-foreground'
                       )}
                     >
