@@ -13,7 +13,7 @@ import { Label } from '@/components/ui/label';
 
 export function ContactSection() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Header */}
       <section id="contact-intro" className="scroll-mt-20 space-y-6">
         <div className="text-center space-y-4">

@@ -13,7 +13,7 @@ export function WritingsSection() {
   const recentWritings = writings.filter((w) => !w.featured);
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Header */}
       <section id="writings-intro" className="scroll-mt-20 space-y-6">
         <SectionHeader

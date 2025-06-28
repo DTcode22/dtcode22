@@ -18,7 +18,7 @@ import { skills } from '@/data/skills';
 
 export function AboutSection() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Introduction */}
       <section id="introduction" className="scroll-mt-20 space-y-6">
         <div className="text-center space-y-4">
@@ -138,7 +138,7 @@ export function AboutSection() {
       </section>
 
       {/* Philosophy */}
-      <section id="philosophy" className="scroll-mt-20 space-y-8">
+      <section id="philosophy" className="scroll-mt-20 space-y-8 pb-32">
         <h2 className="text-3xl font-bold">My Philosophy</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <Card>

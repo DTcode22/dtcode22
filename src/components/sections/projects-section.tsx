@@ -10,7 +10,7 @@ export function ProjectsSection() {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Header */}
       <section id="featured-projects" className="scroll-mt-20 space-y-8">
         <SectionHeader
@@ -53,7 +53,7 @@ export function ProjectsSection() {
       </section>
 
       {/* Technologies */}
-      <section id="technologies" className="scroll-mt-20 space-y-8">
+      <section id="technologies" className="scroll-mt-20 space-y-8 pb-32">
         <h2 className="text-3xl font-bold">Technologies I Use</h2>
         <div className="grid md:grid-cols-4 gap-4">
           {Object.entries(technologies).map(([category, techs]) => (
