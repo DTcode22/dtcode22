@@ -43,10 +43,10 @@ export function Navbar({ activeSection, onNavigate }: NavbarProps) {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-64">
-              <SheetTitle className="text-lg font-semibold mb-4">
+              <SheetTitle className="text-lg font-semibold mb-4 mt-12 flex justify-center">
                 Navigation
               </SheetTitle>
-              <div className="flex flex-col space-y-4 mt-4">
+              <div className="flex flex-col items-center space-y-4 mt-12">
                 {navItems.map((item) => (
                   <button
                     key={item.id}

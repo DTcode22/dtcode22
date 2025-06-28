@@ -1,138 +1,141 @@
-"use client"
+'use client';
 
-import { useEffect, useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+import { useEffect, useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 interface TableOfContentsProps {
-  activeSection: string
+  activeSection: string;
 }
 
 const sectionHeadings = {
   about: [
-    { id: "introduction", title: "Introduction", level: 1 },
-    { id: "background", title: "Background", level: 1 },
-    { id: "skills", title: "Skills & Expertise", level: 1 },
-    { id: "experience", title: "Experience", level: 1 },
-    { id: "philosophy", title: "My Philosophy", level: 1 },
+    { id: 'introduction', title: 'Introduction', level: 1 },
+    { id: 'background', title: 'Background', level: 1 },
+    { id: 'skills', title: 'Skills & Expertise', level: 1 },
+    { id: 'experience', title: 'Experience', level: 1 },
+    { id: 'philosophy', title: 'My Philosophy', level: 1 },
   ],
   projects: [
-    { id: "featured-projects", title: "Featured Projects", level: 1 },
-    { id: "other-projects", title: "Other Projects", level: 1 },
-    { id: "technologies", title: "Technologies", level: 1 },
+    { id: 'featured-projects', title: 'Featured Projects', level: 1 },
+    { id: 'other-projects', title: 'Other Projects', level: 1 },
+    { id: 'technologies', title: 'Technologies', level: 1 },
   ],
   writings: [
-    { id: "writings-intro", title: "Introduction", level: 1 },
-    { id: "featured-articles", title: "Featured Articles", level: 1 },
-    { id: "recent-articles", title: "Recent Articles", level: 1 },
-    { id: "topics", title: "Topics", level: 1 },
+    { id: 'writings-intro', title: 'Introduction', level: 1 },
+    { id: 'featured-articles', title: 'Featured Articles', level: 1 },
+    { id: 'recent-articles', title: 'Recent Articles', level: 1 },
+    { id: 'topics', title: 'Topics', level: 1 },
   ],
   contact: [
-    { id: "contact-intro", title: "Introduction", level: 1 },
-    { id: "contact-methods", title: "Contact Methods", level: 1 },
-    { id: "contact-form", title: "Send Message", level: 1 },
-    { id: "availability", title: "Availability", level: 1 },
+    { id: 'contact-intro', title: 'Introduction', level: 1 },
+    { id: 'contact-methods', title: 'Contact Methods', level: 1 },
+    { id: 'contact-form', title: 'Send Message', level: 1 },
+    { id: 'availability', title: 'Availability', level: 1 },
   ],
-}
+};
 
 export function RightSidebar({ activeSection }: TableOfContentsProps) {
-  const [activeHeading, setActiveHeading] = useState("")
+  const [activeHeading, setActiveHeading] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      const headings = sectionHeadings[activeSection as keyof typeof sectionHeadings] || []
-      if (headings.length === 0) return
+      const headings =
+        sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
+      if (headings.length === 0) return;
 
       // Get the main content container
-      const mainElement = document.querySelector("main")
-      if (!mainElement) return
+      const mainElement = document.querySelector('main');
+      if (!mainElement) return;
 
-      const scrollPosition = mainElement.scrollTop + 100 // Offset for better UX
+      const scrollPosition = mainElement.scrollTop + 100; // Offset for better UX
 
       // Find all heading elements and their positions
       const headingElements = headings
         .map((heading) => {
-          const element = document.getElementById(heading.id)
-          if (!element) return null
+          const element = document.getElementById(heading.id);
+          if (!element) return null;
 
           // Get position relative to the main container
-          const rect = element.getBoundingClientRect()
-          const mainRect = mainElement.getBoundingClientRect()
-          const relativeTop = rect.top - mainRect.top + mainElement.scrollTop
+          const rect = element.getBoundingClientRect();
+          const mainRect = mainElement.getBoundingClientRect();
+          const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
 
           return {
             id: heading.id,
             offsetTop: relativeTop,
             element,
-          }
+          };
         })
-        .filter(Boolean)
+        .filter(Boolean);
 
       // Find the currently active heading
-      let currentActiveHeading = ""
+      let currentActiveHeading = '';
 
       // Check if we're at the very top
       if (scrollPosition < 50) {
-        currentActiveHeading = headingElements[0]?.id || ""
+        currentActiveHeading = headingElements[0]?.id || '';
       } else {
         // Find the heading that's currently in view
         for (let i = headingElements.length - 1; i >= 0; i--) {
-          const heading = headingElements[i]
+          const heading = headingElements[i];
           if (heading && heading.offsetTop <= scrollPosition + 50) {
-            currentActiveHeading = heading.id
-            break
+            currentActiveHeading = heading.id;
+            break;
           }
         }
       }
 
-      setActiveHeading(currentActiveHeading)
-    }
+      setActiveHeading(currentActiveHeading);
+    };
 
     // Get the main element and add scroll listener
-    const mainElement = document.querySelector("main")
+    const mainElement = document.querySelector('main');
     if (mainElement) {
-      mainElement.addEventListener("scroll", handleScroll)
+      mainElement.addEventListener('scroll', handleScroll);
       // Call once to set initial state
-      setTimeout(handleScroll, 100) // Small delay to ensure content is rendered
+      setTimeout(handleScroll, 100); // Small delay to ensure content is rendered
     }
 
     return () => {
       if (mainElement) {
-        mainElement.removeEventListener("scroll", handleScroll)
+        mainElement.removeEventListener('scroll', handleScroll);
       }
-    }
-  }, [activeSection])
+    };
+  }, [activeSection]);
 
   // Reset active heading when section changes
   useEffect(() => {
-    const headings = sectionHeadings[activeSection as keyof typeof sectionHeadings] || []
+    const headings =
+      sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
     if (headings.length > 0) {
-      setActiveHeading(headings[0].id)
+      setActiveHeading(headings[0].id);
     }
-  }, [activeSection])
+  }, [activeSection]);
 
   const scrollToHeading = (headingId: string) => {
-    const element = document.getElementById(headingId)
-    const mainElement = document.querySelector("main")
+    const element = document.getElementById(headingId);
+    const mainElement = document.querySelector('main');
 
     if (element && mainElement) {
       // Calculate the position relative to the main container
-      const rect = element.getBoundingClientRect()
-      const mainRect = mainElement.getBoundingClientRect()
-      const relativeTop = rect.top - mainRect.top + mainElement.scrollTop
+      const rect = element.getBoundingClientRect();
+      const mainRect = mainElement.getBoundingClientRect();
+      const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
 
       // Scroll the main container to the element with some offset
       mainElement.scrollTo({
         top: relativeTop - 20,
-        behavior: "smooth",
-      })
+        behavior: 'smooth',
+      });
     }
-  }
+  };
 
-  const currentHeadings = sectionHeadings[activeSection as keyof typeof sectionHeadings] || []
+  const currentHeadings =
+    sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
 
   return (
-    <aside className="hidden lg:block w-[20vw] h-[calc(100vh-4rem)] bg-muted/30 p-6">
+    <aside className="hidden lg:block w-[18vw] h-[calc(100vh-4rem)] bg-muted/30 p-6">
       <div className="sticky top-6 space-y-6">
         {/* Table of Contents */}
         {currentHeadings.length > 0 && (
@@ -150,8 +153,10 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
                     {/* Active indicator dot */}
                     <div
                       className={cn(
-                        "absolute -left-[3px] top-3 w-1.5 h-1.5 rounded-full transition-all duration-200",
-                        activeHeading === heading.id ? "bg-primary scale-125" : "bg-muted-foreground/30 scale-75",
+                        'absolute -left-[3px] top-3 w-1.5 h-1.5 rounded-full transition-all duration-200',
+                        activeHeading === heading.id
+                          ? 'bg-primary scale-125'
+                          : 'bg-muted-foreground/30 scale-75'
                       )}
                     />
 
@@ -163,10 +168,10 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
                     <button
                       onClick={() => scrollToHeading(heading.id)}
                       className={cn(
-                        "block w-full text-left text-sm py-2 pl-6 pr-2 rounded-r transition-all duration-200 hover:bg-muted/50",
+                        'block w-full text-left text-sm py-2 pl-6 pr-2 rounded-r transition-all duration-200 hover:bg-muted/50',
                         activeHeading === heading.id
-                          ? "text-primary font-medium bg-primary/5 border-r-2 border-primary"
-                          : "text-muted-foreground hover:text-foreground",
+                          ? 'text-primary font-medium bg-primary/5 border-r-2 border-primary'
+                          : 'text-muted-foreground hover:text-foreground'
                       )}
                     >
                       <span className="block truncate">{heading.title}</span>
@@ -215,10 +220,12 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
               <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
               <span className="text-sm font-medium">Available for work</span>
             </div>
-            <p className="text-xs text-muted-foreground">Open to new opportunities and interesting projects</p>
+            <p className="text-xs text-muted-foreground">
+              Open to new opportunities and interesting projects
+            </p>
           </CardContent>
         </Card>
       </div>
     </aside>
-  )
+  );
 }
