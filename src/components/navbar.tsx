@@ -44,7 +44,7 @@ export function Navbar({ activeSection, onNavigate }: NavbarProps) {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64">
+            <SheetContent side="left" className="w-64">
               <SheetTitle className="text-lg font-semibold mb-4">
                 Navigation
               </SheetTitle>

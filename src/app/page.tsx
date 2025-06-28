@@ -55,8 +55,8 @@ export default function Portfolio() {
       <div className="pt-16 flex">
         <LeftSidebar />
 
-        <main className="w-full lg:w-[60vw] h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hidden flex justify-center">
-          <div className="w-full max-w-4xl px-6 lg:px-12 py-8 space-y-20">
+        <main className="w-full lg:w-[64vw] h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hidden flex justify-center">
+          <div className="flex flex-col items-center w-full max-w-4xl px-6 lg:px-12 py-8 space-y-20">
             <Hero onNavigate={scrollToSection} />
             <About />
             <Skills />

@@ -2,7 +2,7 @@ import { Code, Github, Linkedin, Mail } from 'lucide-react';
 
 export function LeftSidebar() {
   return (
-    <aside className="hidden lg:block w-[20vw] h-[calc(100vh-4rem)] bg-muted/30 pt-12 px-6 pb-6">
+    <aside className="hidden lg:block w-[18vw] h-[calc(100vh-4rem)] bg-muted/30 pt-12 px-6 pb-6">
       <div className="sticky top-6">
         <div className="text-center mb-6">
           <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -13,7 +13,7 @@ export function LeftSidebar() {
         </div>
 
         <div className="space-y-4">
-          <div>
+          <div className="flex flex-col items-center">
             <h4 className="font-medium mb-2">Quick Links</h4>
             <div className="space-y-2">
               <a
