@@ -9,7 +9,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from '@/components/ui/sheet';
-import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
 
 const navItems = [
   { id: 'about', label: 'About Me' },

@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Navbar } from '@/components/navbar';
-import { LeftSidebar } from '@/components/left-sidebar';
-import { RightSidebar } from '@/components/right-sidebar';
-import { AboutSection } from '@/components/about-section';
-import { ProjectsSection } from '@/components/projects-section';
-import { WritingsSection } from '@/components/writings-section';
-import { ContactSection } from '@/components/contact-section';
+import { Navbar } from '@/components/layout/navbar';
+import { LeftSidebar } from '@/components/layout/left-sidebar';
+import { RightSidebar } from '@/components/layout/right-sidebar';
+import { AboutSection } from '@/components/sections/about-section';
+import { ProjectsSection } from '@/components/sections/projects-section';
+import { WritingsSection } from '@/components/sections/writings-section';
+import { ContactSection } from '@/components/sections/contact-section';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('about');
@@ -43,7 +43,7 @@ export default function Portfolio() {
       <div className="pt-16 flex">
         <LeftSidebar />
 
-        <main className="w-full lg:w-[60vw] h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hide flex justify-center">
+        <main className="w-full lg:w-[64vw] h-[calc(100vh-4rem)] overflow-y-auto scrollbar-hidden flex justify-center">
           <div className="w-full max-w-4xl px-6 lg:px-12 py-8">
             {renderMainContent()}
           </div>
