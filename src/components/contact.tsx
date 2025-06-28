@@ -1,5 +1,5 @@
-import { Mail, Linkedin } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Mail, Linkedin } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 export function Contact() {
   return (
@@ -7,15 +7,15 @@ export function Contact() {
       <h2 className="text-3xl font-bold">Get In Touch</h2>
       <div className="max-w-2xl">
         <p className="text-muted-foreground mb-8">
-          I'm always interested in new opportunities and interesting projects. Let's connect and discuss how we can work
-          together!
+          I'm always interested in new opportunities and interesting projects.
+          Let's connect and discuss how we can work together!
         </p>
         <div className="grid sm:grid-cols-2 gap-6">
           <Card>
             <CardContent className="p-6">
               <Mail className="w-8 h-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground">john.doe@example.com</p>
+              <p className="text-muted-foreground">dejant999@gmail.com</p>
             </CardContent>
           </Card>
 
@@ -23,11 +23,13 @@ export function Contact() {
             <CardContent className="p-6">
               <Linkedin className="w-8 h-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">LinkedIn</h3>
-              <p className="text-muted-foreground">linkedin.com/in/johndoe</p>
+              <p className="text-muted-foreground">
+                https://www.linkedin.com/in/dejan-turuntas/
+              </p>
             </CardContent>
           </Card>
         </div>
       </div>
     </section>
-  )
+  );
 }

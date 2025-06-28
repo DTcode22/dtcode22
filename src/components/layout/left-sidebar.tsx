@@ -1,14 +1,15 @@
 import { Code, Github, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 export function LeftSidebar() {
   return (
     <aside className="hidden lg:block w-[18vw] h-[calc(100vh-4rem)] bg-muted/30 pt-12 px-6 pb-6">
       <div className="sticky top-6">
         <div className="text-center mb-6">
-          <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <Code className="w-12 h-12 text-primary" />
+          <div className="w-36 h-36 bg-primary/10 mx-auto mb-4 flex items-center justify-center">
+            <Image src="/ghibli.png" alt="me" height={144} width={144}></Image>
           </div>
-          <h3 className="font-semibold text-lg">John Doe</h3>
+          <h3 className="font-semibold text-lg">DTcode22</h3>
           <p className="text-sm text-muted-foreground">Full Stack Developer</p>
         </div>
 
@@ -17,21 +18,23 @@ export function LeftSidebar() {
             <h4 className="font-medium mb-2">Quick Links</h4>
             <div className="space-y-2">
               <a
-                href="#"
+                href="https://github.com/DTcode22"
                 className="flex items-center text-sm text-muted-foreground hover:text-primary"
+                target="_blank"
               >
                 <Github className="w-4 h-4 mr-2" />
                 GitHub
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/dejan-turuntas/"
                 className="flex items-center text-sm text-muted-foreground hover:text-primary"
+                target="_blank"
               >
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
               <a
-                href="#"
+                href="mailto:dejant999@gmail.com"
                 className="flex items-center text-sm text-muted-foreground hover:text-primary"
               >
                 <Mail className="w-4 h-4 mr-2" />
