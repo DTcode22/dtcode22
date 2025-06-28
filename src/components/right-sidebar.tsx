@@ -1,70 +1,138 @@
-"use client"
+'use client';
 
-import { useEffect, useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+import { useEffect, useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 interface TableOfContentsProps {
-  activeSection: string
+  activeSection: string;
 }
 
 const sectionHeadings = {
   about: [
-    { id: "introduction", title: "Introduction", level: 1 },
-    { id: "background", title: "Background", level: 1 },
-    { id: "skills", title: "Skills & Expertise", level: 1 },
-    { id: "experience", title: "Experience", level: 1 },
-    { id: "philosophy", title: "My Philosophy", level: 1 },
+    { id: 'introduction', title: 'Introduction', level: 1 },
+    { id: 'background', title: 'Background', level: 1 },
+    { id: 'skills', title: 'Skills & Expertise', level: 1 },
+    { id: 'experience', title: 'Experience', level: 1 },
+    { id: 'philosophy', title: 'My Philosophy', level: 1 },
   ],
   projects: [
-    { id: "featured-projects", title: "Featured Projects", level: 1 },
-    { id: "other-projects", title: "Other Projects", level: 1 },
-    { id: "technologies", title: "Technologies", level: 1 },
+    { id: 'featured-projects', title: 'Featured Projects', level: 1 },
+    { id: 'other-projects', title: 'Other Projects', level: 1 },
+    { id: 'technologies', title: 'Technologies', level: 1 },
   ],
   writings: [
-    { id: "writings-intro", title: "Introduction", level: 1 },
-    { id: "featured-articles", title: "Featured Articles", level: 1 },
-    { id: "recent-articles", title: "Recent Articles", level: 1 },
-    { id: "topics", title: "Topics", level: 1 },
+    { id: 'writings-intro', title: 'Introduction', level: 1 },
+    { id: 'featured-articles', title: 'Featured Articles', level: 1 },
+    { id: 'recent-articles', title: 'Recent Articles', level: 1 },
+    { id: 'topics', title: 'Topics', level: 1 },
   ],
   contact: [
-    { id: "contact-intro", title: "Introduction", level: 1 },
-    { id: "contact-methods", title: "Contact Methods", level: 1 },
-    { id: "contact-form", title: "Send Message", level: 1 },
-    { id: "availability", title: "Availability", level: 1 },
+    { id: 'contact-intro', title: 'Introduction', level: 1 },
+    { id: 'contact-methods', title: 'Contact Methods', level: 1 },
+    { id: 'contact-form', title: 'Send Message', level: 1 },
+    { id: 'availability', title: 'Availability', level: 1 },
   ],
-}
+};
 
 export function RightSidebar({ activeSection }: TableOfContentsProps) {
-  const [activeHeading, setActiveHeading] = useState("")
+  const [activeHeading, setActiveHeading] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      const headings = sectionHeadings[activeSection as keyof typeof sectionHeadings] || []
-      const scrollPosition = window.scrollY + 150
+      const headings =
+        sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
+      if (headings.length === 0) return;
 
-      for (let i = headings.length - 1; i >= 0; i--) {
-        const element = document.getElementById(headings[i].id)
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveHeading(headings[i].id)
-          break
+      // Get the main content container
+      const mainElement = document.querySelector('main');
+      if (!mainElement) return;
+
+      const scrollPosition = mainElement.scrollTop + 100; // Offset for better UX
+
+      // Find all heading elements and their positions
+      const headingElements = headings
+        .map((heading) => {
+          const element = document.getElementById(heading.id);
+          if (!element) return null;
+
+          // Get position relative to the main container
+          const rect = element.getBoundingClientRect();
+          const mainRect = mainElement.getBoundingClientRect();
+          const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
+
+          return {
+            id: heading.id,
+            offsetTop: relativeTop,
+            element,
+          };
+        })
+        .filter(Boolean);
+
+      // Find the currently active heading
+      let currentActiveHeading = '';
+
+      // Check if we're at the very top
+      if (scrollPosition < 50) {
+        currentActiveHeading = headingElements[0]?.id || '';
+      } else {
+        // Find the heading that's currently in view
+        for (let i = headingElements.length - 1; i >= 0; i--) {
+          const heading = headingElements[i];
+          if (heading && heading.offsetTop <= scrollPosition + 50) {
+            currentActiveHeading = heading.id;
+            break;
+          }
         }
       }
+
+      setActiveHeading(currentActiveHeading);
+    };
+
+    // Get the main element and add scroll listener
+    const mainElement = document.querySelector('main');
+    if (mainElement) {
+      mainElement.addEventListener('scroll', handleScroll);
+      // Call once to set initial state
+      setTimeout(handleScroll, 100); // Small delay to ensure content is rendered
     }
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll() // Call once to set initial state
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [activeSection])
+    return () => {
+      if (mainElement) {
+        mainElement.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [activeSection]);
+
+  // Reset active heading when section changes
+  useEffect(() => {
+    const headings =
+      sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
+    if (headings.length > 0) {
+      setActiveHeading(headings[0].id);
+    }
+  }, [activeSection]);
 
   const scrollToHeading = (headingId: string) => {
-    const element = document.getElementById(headingId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
-  }
+    const element = document.getElementById(headingId);
+    const mainElement = document.querySelector('main');
 
-  const currentHeadings = sectionHeadings[activeSection as keyof typeof sectionHeadings] || []
+    if (element && mainElement) {
+      // Calculate the position relative to the main container
+      const rect = element.getBoundingClientRect();
+      const mainRect = mainElement.getBoundingClientRect();
+      const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
+
+      // Scroll the main container to the element with some offset
+      mainElement.scrollTo({
+        top: relativeTop - 20,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const currentHeadings =
+    sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
 
   return (
     <aside className="hidden lg:block w-[20vw] h-[calc(100vh-4rem)] bg-muted/30 p-6">
@@ -75,19 +143,42 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
             <CardHeader>
               <CardTitle className="text-lg">On This Page</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
-              {currentHeadings.map((heading) => (
-                <button
-                  key={heading.id}
-                  onClick={() => scrollToHeading(heading.id)}
-                  className={cn(
-                    "block w-full text-left text-sm py-1 px-2 rounded transition-colors hover:bg-muted",
-                    activeHeading === heading.id ? "text-primary font-medium bg-muted" : "text-muted-foreground",
-                  )}
-                >
-                  {heading.title}
-                </button>
-              ))}
+            <CardContent className="space-y-1">
+              <div className="relative">
+                {/* Progress indicator line */}
+                <div className="absolute left-0 top-0 bottom-0 w-px bg-border"></div>
+
+                {currentHeadings.map((heading, index) => (
+                  <div key={heading.id} className="relative">
+                    {/* Active indicator dot */}
+                    <div
+                      className={cn(
+                        'absolute -left-[3px] top-3 w-1.5 h-1.5 rounded-full transition-all duration-200',
+                        activeHeading === heading.id
+                          ? 'bg-primary scale-125'
+                          : 'bg-muted-foreground/30 scale-75'
+                      )}
+                    />
+
+                    {/* Progress line for active section */}
+                    {activeHeading === heading.id && (
+                      <div className="absolute left-0 top-0 bottom-0 w-px bg-primary"></div>
+                    )}
+
+                    <button
+                      onClick={() => scrollToHeading(heading.id)}
+                      className={cn(
+                        'block w-full text-left text-sm py-2 pl-6 pr-2 rounded-r transition-all duration-200 hover:bg-muted/50',
+                        activeHeading === heading.id
+                          ? 'text-primary font-medium bg-primary/5 border-r-2 border-primary'
+                          : 'text-muted-foreground hover:text-foreground'
+                      )}
+                    >
+                      <span className="block truncate">{heading.title}</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </CardContent>
           </Card>
         )}
@@ -99,17 +190,21 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer">
+              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
                 Building Scalable React Apps
               </h4>
               <p className="text-xs text-muted-foreground">Jan 15, 2024</p>
             </div>
             <div>
-              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer">Next.js 14 Features</h4>
+              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
+                Next.js 14 Features
+              </h4>
               <p className="text-xs text-muted-foreground">Jan 10, 2024</p>
             </div>
             <div>
-              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer">TypeScript Best Practices</h4>
+              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
+                TypeScript Best Practices
+              </h4>
               <p className="text-xs text-muted-foreground">Jan 5, 2024</p>
             </div>
           </CardContent>
@@ -122,13 +217,15 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
           </CardHeader>
           <CardContent>
             <div className="flex items-center mb-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-              <span className="text-sm">Available for work</span>
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+              <span className="text-sm font-medium">Available for work</span>
             </div>
-            <p className="text-xs text-muted-foreground">Open to new opportunities and interesting projects</p>
+            <p className="text-xs text-muted-foreground">
+              Open to new opportunities and interesting projects
+            </p>
           </CardContent>
         </Card>
       </div>
     </aside>
-  )
+  );
 }
