@@ -1,19 +1,32 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface ArticleCardProps {
-  title: string
-  excerpt: string
-  date: string
-  readTime: string
-  tags: string[]
-  featured?: boolean
-  url?: string
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  featured?: boolean;
+  url?: string;
 }
 
-export function ArticleCard({ title, excerpt, date, readTime, tags, featured = false, url }: ArticleCardProps) {
+export function ArticleCard({
+  title,
+  excerpt,
+  date,
+  readTime,
+  tags,
+  featured = false,
+}: ArticleCardProps) {
   if (featured) {
     return (
       <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
@@ -28,8 +41,12 @@ export function ArticleCard({ title, excerpt, date, readTime, tags, featured = f
               {readTime}
             </div>
           </div>
-          <CardTitle className="group-hover:text-primary transition-colors">{title}</CardTitle>
-          <CardDescription className="text-sm leading-relaxed">{excerpt}</CardDescription>
+          <CardTitle className="group-hover:text-primary transition-colors">
+            {title}
+          </CardTitle>
+          <CardDescription className="text-sm leading-relaxed">
+            {excerpt}
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-between">
@@ -40,13 +57,17 @@ export function ArticleCard({ title, excerpt, date, readTime, tags, featured = f
                 </Badge>
               ))}
             </div>
-            <Button variant="ghost" size="sm" className="group-hover:text-primary">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="group-hover:text-primary"
+            >
               Read More <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -64,7 +85,9 @@ export function ArticleCard({ title, excerpt, date, readTime, tags, featured = f
                 {readTime}
               </div>
             </div>
-            <h3 className="text-xl font-semibold hover:text-primary transition-colors cursor-pointer">{title}</h3>
+            <h3 className="text-xl font-semibold hover:text-primary transition-colors cursor-pointer">
+              {title}
+            </h3>
             <p className="text-muted-foreground text-sm">{excerpt}</p>
             <div className="flex flex-wrap gap-2 pt-2">
               {tags.map((tag) => (
@@ -80,5 +103,5 @@ export function ArticleCard({ title, excerpt, date, readTime, tags, featured = f
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { Code, Palette, Smartphone } from "lucide-react"
+import { Code, Palette, Smartphone } from 'lucide-react';
 
 export function About() {
   return (
@@ -7,12 +7,14 @@ export function About() {
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <p className="text-muted-foreground mb-4">
-            I'm a passionate full-stack developer with over 5 years of experience building web applications. I love
-            creating efficient, scalable solutions and learning new technologies.
+            I&apos;m a passionate full-stack developer with over 5 years of
+            experience building web applications. I love creating efficient,
+            scalable solutions and learning new technologies.
           </p>
           <p className="text-muted-foreground">
-            When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or
-            enjoying outdoor activities.
+            When I&apos;m not coding, you can find me exploring new
+            technologies, contributing to open source projects, or enjoying
+            outdoor activities.
           </p>
         </div>
         <div className="space-y-4">
@@ -31,5 +33,5 @@ export function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

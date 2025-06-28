@@ -23,7 +23,7 @@ export function AboutSection() {
       <section id="introduction" className="scroll-mt-20 space-y-6">
         <div className="text-center space-y-4">
           <h1 className="text-4xl lg:text-6xl font-bold">
-            Hi, I'm{' '}
+            Hi, I&apos;m{' '}
             <span className="text-primary">
               Dejan<span className="font-size:100px;">&#128075;</span>{' '}
             </span>
@@ -41,10 +41,10 @@ export function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <p className="text-muted-foreground">
-              I'm a passionate full-stack developer with over 5 years of
+              I&apos;m a passionate full-stack developer with over 5 years of
               experience building web applications. My journey started with a
-              Computer Science degree, and I've been continuously learning and
-              adapting to new technologies ever since.
+              Computer Science degree, and I&apos;ve been continuously learning
+              and adapting to new technologies ever since.
             </p>
             <p className="text-muted-foreground">
               I specialize in creating efficient, scalable solutions that solve

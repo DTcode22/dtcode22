@@ -7,8 +7,8 @@ export function Contact() {
       <h2 className="text-3xl font-bold">Get In Touch</h2>
       <div className="max-w-2xl">
         <p className="text-muted-foreground mb-8">
-          I'm always interested in new opportunities and interesting projects.
-          Let's connect and discuss how we can work together!
+          I&apos;m always interested in new opportunities and interesting
+          projects. Let&apos;s connect and discuss how we can work together!
         </p>
         <div className="grid sm:grid-cols-2 gap-6">
           <Card>

@@ -19,9 +19,9 @@ export function ContactSection() {
         <div className="text-center space-y-4">
           <h1 className="text-4xl lg:text-5xl font-bold">Get In Touch</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm always interested in new opportunities, interesting projects,
-            and meaningful conversations. Let's connect and discuss how we can
-            work together!
+            I&apos;m always interested in new opportunities, interesting
+            projects, and meaningful conversations. Let&apos;s connect and
+            discuss how we can work together!
           </p>
         </div>
       </section>
@@ -90,9 +90,9 @@ export function ContactSection() {
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Let's Start a Conversation</CardTitle>
+              <CardTitle>Let&apos;s Start a Conversation</CardTitle>
               <CardDescription>
-                Fill out the form below and I'll get back to you as soon as
+                Fill out the form below and I&apos;ll get back to you as soon as
                 possible.
               </CardDescription>
             </CardHeader>
@@ -146,8 +146,9 @@ export function ContactSection() {
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  I'm currently accepting new freelance projects and full-time
-                  opportunities. Response time is typically within 24 hours.
+                  I&apos;m currently accepting new freelance projects and
+                  full-time opportunities. Response time is typically within 24
+                  hours.
                 </p>
               </div>
             </div>

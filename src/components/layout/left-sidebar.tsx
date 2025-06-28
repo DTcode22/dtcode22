@@ -1,4 +1,4 @@
-import { Code, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 export function LeftSidebar() {
