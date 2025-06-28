@@ -1,8 +1,8 @@
-import { Code, Github, Linkedin, Mail } from "lucide-react"
+import { Code, Github, Linkedin, Mail } from 'lucide-react';
 
 export function LeftSidebar() {
   return (
-    <aside className="hidden lg:block w-[20vw] h-[calc(100vh-4rem)] bg-muted/30 p-6">
+    <aside className="hidden lg:block w-[20vw] h-[calc(100vh-4rem)] bg-muted/30 pt-12 px-6 pb-6">
       <div className="sticky top-6">
         <div className="text-center mb-6">
           <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -16,15 +16,24 @@ export function LeftSidebar() {
           <div>
             <h4 className="font-medium mb-2">Quick Links</h4>
             <div className="space-y-2">
-              <a href="#" className="flex items-center text-sm text-muted-foreground hover:text-primary">
+              <a
+                href="#"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary"
+              >
                 <Github className="w-4 h-4 mr-2" />
                 GitHub
               </a>
-              <a href="#" className="flex items-center text-sm text-muted-foreground hover:text-primary">
+              <a
+                href="#"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary"
+              >
                 <Linkedin className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
-              <a href="#" className="flex items-center text-sm text-muted-foreground hover:text-primary">
+              <a
+                href="#"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary"
+              >
                 <Mail className="w-4 h-4 mr-2" />
                 Email
               </a>
@@ -33,5 +42,5 @@ export function LeftSidebar() {
         </div>
       </div>
     </aside>
-  )
+  );
 }
