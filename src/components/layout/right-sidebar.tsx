@@ -14,7 +14,7 @@ const sectionHeadings = {
     { id: 'background', title: 'whoami', level: 1 },
     { id: 'skills', title: 'credentials', level: 1 },
     { id: 'experience', title: 'getWork()', level: 1 },
-    { id: 'skills-tools', title: 'Tools', level: 1 },
+    { id: 'skills-tools', title: 'dependencies', level: 1 },
   ],
   projects: [
     { id: 'featured-projects', title: 'Featured Projects', level: 1 },

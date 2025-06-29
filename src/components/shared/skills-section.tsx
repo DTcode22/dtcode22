@@ -1,29 +1,25 @@
-import { SkillBadge } from './skill-badge';
+import { ChevronRight } from 'lucide-react';
+import { SkillBadgeWithIcons } from './skill-badge-with-icons';
 import { skillsAndTools } from '@/data/skills';
 
 export function SkillsSection() {
-  // Group skills by rows for better visual organization
-  const skillRows = [
-    skillsAndTools.slice(0, 7), // First row: ReactJs, NextJs, Django, JavaScript, TypeScript, Tailwind, Zustand
-    skillsAndTools.slice(7, 14), // Second row: Tanstack Query, shadcn, Motion, GSAP, NodeJS, ExpressJS, PostgreSQL
-    skillsAndTools.slice(14, 23), // Third row: MongoDB, Redis, Prisma, Postman, Git, GitHub, Python, Java, C
-    skillsAndTools.slice(23), // Fourth row: C++, SQL, Docker, Linux, Vercel, Figma
-  ];
-
   return (
-    <section id="skills-tools" className="scroll-mt-20 space-y-8 pb-42">
-      <h2 className="text-3xl font-bold">Skills & Tools</h2>
-      <div className="space-y-4">
-        {skillRows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-wrap gap-3">
-            {row.map((skill, index) => (
-              <SkillBadge
-                key={`${rowIndex}-${index}`}
-                name={skill.name}
-                className="transition-all duration-200 hover:bg-primary/10 hover:border-primary/20"
-              />
-            ))}
-          </div>
+    <section id="skills-tools" className="scroll-mt-20 space-y-8">
+      <div className="flex align-top">
+        <ChevronRight height={42} width={32}></ChevronRight>
+        <h2 className="text-3xl font-bold">
+          <code className="tracking-tight">devDependencies</code>
+        </h2>
+      </div>
+
+      {/* Skills grid - flexible layout that wraps naturally */}
+      <div className="flex flex-wrap gap-3">
+        {skillsAndTools.map((skill, index) => (
+          <SkillBadgeWithIcons
+            key={index}
+            name={skill.name}
+            className="hover:border-primary/30 hover:bg-primary/5"
+          />
         ))}
       </div>
 

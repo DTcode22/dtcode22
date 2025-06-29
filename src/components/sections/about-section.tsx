@@ -16,10 +16,10 @@ export function AboutSection() {
       <section id="introduction" className="scroll-mt-20 space-y-6 mb-32">
         <div className="text-center space-y-6">
           <h1 className="text-4xl lg:text-6xl font-bold">
-            Hey, I&apos;m{' '}
-            <span className="text-primary">
-              Dejan<span className="font-size:100px;">&#128075;</span>{' '}
-            </span>
+            <code className="tracking-tighter">
+              Hello world, I&apos;m Dejan
+            </code>
+            <span className="font-size:100px;">&#128075;</span>{' '}
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
             A full-stack developer, still figuring it out but making it look
@@ -32,7 +32,9 @@ export function AboutSection() {
       <section id="background" className="scroll-mt-20 space-y-6">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
-          <h2 className="text-3xl font-bold">whoami</h2>
+          <h2 className="text-3xl font-bold">
+            <code className="tracking-wider">whoami</code>
+          </h2>
         </div>
         <div className="">
           <div className="space-y-4">
@@ -40,12 +42,14 @@ export function AboutSection() {
               - I&apos;m a full-stack web developer with a computer sciences
               background.
               <br />
+              - Born in 1999, Based in Serbia/BiH, open to full-time and
+              part-time roles <br />
+              - I&apos;m flexible working with different tech stacks, though i
+              prefer modern tools.
+              <br />
               - I&apos;ve done freelance work and collaborated on projects
-              <br />- Born in 1999, Based in Serbia/BiH, open to full-time and
-              part-time roles as well as remote work. <br /> - I&apos;m flexible
-              working with different tech stacks, though i prefer modern tools.
-              <br />- Questionable sense of humor
               <br />- Creative chaos and organized perfectionism
+              <br />- Questionable sense of humor
             </p>
           </div>
         </div>
@@ -54,11 +58,16 @@ export function AboutSection() {
       <section id="skills" className="scroll-mt-20 space-y-6">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
-          <h2 className="text-3xl font-bold">credentials-manager</h2>
+          <h2 className="text-3xl font-bold">
+            <code className="tracking-tighter">credentials-manager</code>
+          </h2>
         </div>
-        <div className="text-primary pl-8 flex flex-col">
+        <div className="text-primary pl-8 flex flex-col gap-1">
           <div className="wrap">
-            npx create-next-app@latest (--disable-git fixed-undocumented
+            <code>
+              {' '}
+              npx create-next-app@latest (--disable-git fixed-undocumented{' '}
+            </code>
             <a
               href="https://x.com/wired761/status/1936966124551426424"
               className="text-sky-400 underline"
@@ -68,24 +77,11 @@ export function AboutSection() {
               see here
             </a>
             )
-            <br />
           </div>
-          <div className="wrap">
-            npx shadcn@latest add --all (build errors unresolved{' '}
-            <a
-              href="https://github.com/shadcn-ui/ui/issues/5214"
-              className="text-sky-400 underline"
-              target="_blank"
-            >
-              {' '}
-              see here
-            </a>
-            )
-          </div>
-          git init <br />
-          git config user.name
-          <br />
-          <div className="wrap flex items-center  pl-16">
+          <code>git init</code>
+
+          <code>git config user.name</code>
+          <div className="wrap flex items-center pb-2 pl-18">
             <ChevronRight></ChevronRight>{' '}
             <a
               href="https://github.com/dtcode22"
@@ -96,9 +92,8 @@ export function AboutSection() {
               <ExternalLink height={12} width={12}></ExternalLink>
             </a>
           </div>
-          git config user.email
-          <br />
-          <div className="wrap flex items-center gap-1 pl-16">
+          <code>git config user.email</code>
+          <div className="wrap flex items-center gap-1 pb-2 pl-18">
             <ChevronRight></ChevronRight>
             <a
               href="mailto:dejant999@gmail.com"
@@ -109,8 +104,8 @@ export function AboutSection() {
               <ExternalLink height={12} width={12}></ExternalLink>
             </a>
           </div>
-          git remote set origin
-          <div className="wrap flex items-center gap-1 pl-16">
+          <code>git remote set origin</code>
+          <div className="wrap flex items-center gap-1 pb-2 pl-18">
             <ChevronRight></ChevronRight>
             <a
               href="https://github.com/supdiff/dtc-portfolio/commits/master/"
@@ -127,7 +122,9 @@ export function AboutSection() {
       <section id="experience" className="scroll-mt-20 space-y-8">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
-          <h2 className="text-3xl font-bold">getWorkExperience&#40;&#41;</h2>
+          <h2 className="text-3xl font-bold">
+            <code className="tracking-normal">getWorkExperience&#40;&#41;</code>
+          </h2>
         </div>
         <div className="space-y-6">
           <Card>
