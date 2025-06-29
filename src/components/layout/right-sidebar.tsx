@@ -10,9 +10,9 @@ interface TableOfContentsProps {
 
 const sectionHeadings = {
   about: [
-    { id: 'introduction', title: 'Introduction', level: 1 },
-    { id: 'background', title: 'Background', level: 1 },
-    { id: 'skills', title: 'Skills & Expertise', level: 1 },
+    { id: 'introduction', title: 'Greetings', level: 1 },
+    { id: 'background', title: 'Whoami', level: 1 },
+    { id: 'skills', title: 'Tools', level: 1 },
     { id: 'experience', title: 'Experience', level: 1 },
     { id: 'philosophy', title: 'My Philosophy', level: 1 },
   ],
