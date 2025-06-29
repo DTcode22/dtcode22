@@ -176,10 +176,13 @@ export function AboutSection() {
                 <Badge variant="secondary">React.js</Badge>
                 <Badge variant="secondary">JS</Badge>
                 <Badge variant="secondary">TS</Badge>
+                <Badge variant="secondary">Tailwind</Badge>
                 <Badge variant="secondary">GSAP</Badge>
                 <Badge variant="secondary">Motion</Badge>
-                <Badge variant="secondary">Postman</Badge>
+                <Badge variant="secondary">Shadcn</Badge>
+                <Badge variant="secondary">Figma</Badge>
                 <Badge variant="secondary">Firebase</Badge>
+                <Badge variant="secondary">Postman</Badge>
                 <Badge variant="secondary">Netlify</Badge>
                 <Badge variant="secondary">Vercel</Badge>
                 <Badge variant="secondary">GSC</Badge>
