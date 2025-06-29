@@ -11,7 +11,7 @@ export function SkillsSection() {
   ];
 
   return (
-    <section id="skills-tools" className="scroll-mt-20 space-y-8">
+    <section id="skills-tools" className="scroll-mt-20 space-y-8 pb-42">
       <h2 className="text-3xl font-bold">Skills & Tools</h2>
       <div className="space-y-4">
         {skillRows.map((row, rowIndex) => (

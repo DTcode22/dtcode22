@@ -90,7 +90,7 @@ export function AboutSection() {
             <a
               href="https://github.com/dtcode22"
               target="_blank"
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 underline"
             >
               DTcode22
               <ExternalLink height={12} width={12}></ExternalLink>
@@ -103,7 +103,7 @@ export function AboutSection() {
             <a
               href="mailto:dejant999@gmail.com"
               target="_blank"
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 underline"
             >
               dejant999@gmail.com
               <ExternalLink height={12} width={12}></ExternalLink>
@@ -115,7 +115,7 @@ export function AboutSection() {
             <a
               href="https://github.com/supdiff/dtc-portfolio/commits/master/"
               target="_blank"
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 underline"
             >
               https://github.com/supdiff/dtc-portfolio
               <ExternalLink height={12} width={12}></ExternalLink>
@@ -158,7 +158,7 @@ export function AboutSection() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Freelance</CardTitle>
+              <CardTitle>Freelance Work</CardTitle>
               <CardDescription>Self Emp • 2023 - Present</CardDescription>
               <div className="wrap flex items-center gap-1 text-muted-foreground text-sm">
                 <MapPin height={14} width={14}></MapPin>BiH • Srb • Remote
