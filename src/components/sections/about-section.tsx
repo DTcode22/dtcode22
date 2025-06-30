@@ -13,14 +13,13 @@ import { techStack, backendStack } from '@/data/badge';
 export function AboutSection() {
   return (
     <div className="space-y-16">
-      {/* Introduction */}
       <section id="introduction" className="scroll-mt-20 space-y-6 mb-32">
         <div className="text-center space-y-6">
           <h1 className="text-4xl lg:text-6xl font-bold">
             <code className="tracking-tighter">
               Hello world, I&apos;m Dejan
             </code>
-            <span className="font-size:100px;">&#128075;</span>{' '}
+            <span className="font-size:100px;">&#128075;</span>
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
             A full-stack developer, still figuring it out but making it look
@@ -29,7 +28,6 @@ export function AboutSection() {
         </div>
       </section>
 
-      {/* Background */}
       <section id="background" className="scroll-mt-20 space-y-6">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
@@ -45,17 +43,16 @@ export function AboutSection() {
               <br />
               - Born in 1999, Based in Serbia/BiH, open to full-time and
               part-time roles <br />
-              - I&apos;m flexible working with different tech stacks, though i
+              - I&apos;m flexible working with different tech stacks, though I
               prefer modern tools.
               <br />
               - I&apos;ve done freelance work and collaborated on projects
-              <br />- Creative chaos and organized perfectionism
+              <br />- Creative chaos meets organized perfectionism
               <br />- Questionable sense of humor
             </p>
           </div>
         </div>
       </section>
-      {/* Skills */}
       <section id="skills" className="scroll-mt-20 space-y-6">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
@@ -83,7 +80,7 @@ export function AboutSection() {
 
           <code>git config user.name</code>
           <div className="wrap flex items-center pb-2 pl-18">
-            <ChevronRight></ChevronRight>{' '}
+            <ChevronRight></ChevronRight>
             <a
               href="https://github.com/dtcode22"
               target="_blank"
@@ -119,7 +116,7 @@ export function AboutSection() {
           </div>
         </div>
       </section>
-      {/* Experience */}
+
       <section id="experience" className="scroll-mt-20 space-y-8">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
@@ -181,7 +178,6 @@ export function AboutSection() {
         </div>
       </section>
 
-      {/* Philosophy */}
       <SkillsSection />
     </div>
   );
