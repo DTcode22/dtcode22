@@ -1,0 +1,28 @@
+export const backendStack = [
+  'Svelte.js',
+  'Node.js',
+  'Tailwind.css',
+  'Firebase',
+  'Firestore',
+  'Auth',
+  'Cloud Storage',
+];
+export const techStack = [
+  'Next.js',
+  'React.js',
+  'JS',
+  'TS',
+  'Tailwind',
+  'GSAP',
+  'Motion',
+  'Shadcn',
+  'Figma',
+  'Firebase',
+  'Postman',
+  'Netlify',
+  'Vercel',
+  'GSC',
+  'Google Analytics',
+  'Lighthouse',
+  'Namescheap',
+];

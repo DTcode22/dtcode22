@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SkillsSection } from '../shared/skills-section';
+import { techStack, backendStack } from '@/data/badge';
 
 export function AboutSection() {
   return (
@@ -142,13 +143,13 @@ export function AboutSection() {
                 storage for online e-commerce webshop app.
               </div>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Svelte.js</Badge>
-                <Badge variant="secondary">Node.js</Badge>
-                <Badge variant="secondary">Tailwind.css</Badge>
-                <Badge variant="secondary">Firebase</Badge>
-                <Badge variant="secondary">Firestore</Badge>
-                <Badge variant="secondary">Auth</Badge>
-                <Badge variant="secondary">Cloud Storage</Badge>
+                <div className="flex flex-wrap gap-2">
+                  {backendStack.map((tech) => (
+                    <Badge key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -169,23 +170,11 @@ export function AboutSection() {
                 and React/Next.js developing front-end and back-end solutions.
               </p>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Next.js</Badge>
-                <Badge variant="secondary">React.js</Badge>
-                <Badge variant="secondary">JS</Badge>
-                <Badge variant="secondary">TS</Badge>
-                <Badge variant="secondary">Tailwind</Badge>
-                <Badge variant="secondary">GSAP</Badge>
-                <Badge variant="secondary">Motion</Badge>
-                <Badge variant="secondary">Shadcn</Badge>
-                <Badge variant="secondary">Figma</Badge>
-                <Badge variant="secondary">Firebase</Badge>
-                <Badge variant="secondary">Postman</Badge>
-                <Badge variant="secondary">Netlify</Badge>
-                <Badge variant="secondary">Vercel</Badge>
-                <Badge variant="secondary">GSC</Badge>
-                <Badge variant="secondary">Google Analytics</Badge>
-                <Badge variant="secondary">Lighthouse</Badge>
-                <Badge variant="secondary">Namescheap</Badge>
+                {techStack.map((tech) => (
+                  <Badge key={tech} variant="secondary">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
           </Card>
