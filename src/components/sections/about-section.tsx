@@ -108,7 +108,7 @@ export function AboutSection() {
           <div className="wrap flex items-center gap-1 pb-2 pl-18">
             <ChevronRight></ChevronRight>
             <a
-              href="https://github.com/supdiff/dtc-portfolio/commits/master/"
+              href="https://github.com/supdiff"
               target="_blank"
               className="flex items-center gap-1 underline"
             >
