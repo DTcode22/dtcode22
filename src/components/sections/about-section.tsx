@@ -137,7 +137,7 @@ export function AboutSection() {
               <div className="text-muted-foreground mb-4">
                 Worked on a custom backend admin dashboard project in Svelte
                 using Firebase for CRUD operations, authentication and file
-                storage for online e-commerce webshop app.
+                storage for online e-commerce webshop.
               </div>
               <div className="flex flex-wrap gap-2">
                 <div className="flex flex-wrap gap-2">
@@ -161,7 +161,7 @@ export function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Worked on freelancing websites for clients including designing,
+                Worked on freelance projects for clients including designing,
                 coding, hosting, deploying, domain, indexing and SEO
                 optimisation. Utilized different frameworks including Astro.js
                 and React/Next.js developing front-end and back-end solutions.
