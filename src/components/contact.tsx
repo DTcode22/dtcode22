@@ -1,4 +1,4 @@
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Twitter } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 export function Contact() {
@@ -21,11 +21,9 @@ export function Contact() {
 
           <Card>
             <CardContent className="p-6">
-              <Linkedin className="w-8 h-8 text-primary mb-4" />
-              <h3 className="font-semibold mb-2">LinkedIn</h3>
-              <p className="text-muted-foreground">
-                https://www.linkedin.com/in/dejan-turuntas/
-              </p>
+              <Twitter className="w-8 h-8 text-primary mb-4" />
+              <h3 className="font-semibold mb-2">X</h3>
+              <p className="text-muted-foreground">https://x.com/wired761</p>
             </CardContent>
           </Card>
         </div>
