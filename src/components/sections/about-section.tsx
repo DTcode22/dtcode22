@@ -63,7 +63,7 @@ export function AboutSection() {
           </h2>
         </div>
         <div className="text-primary pl-8 flex flex-col gap-1">
-          <div className="wrap">
+          {/* <div className="wrap">
             <code>
               {' '}
               npx create-next-app@latest (--disable-git fixed-undocumented{' '}
@@ -77,7 +77,7 @@ export function AboutSection() {
               see here
             </a>
             )
-          </div>
+          </div> */}
           <code>git init</code>
 
           <code>git config user.name</code>

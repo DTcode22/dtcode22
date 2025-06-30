@@ -1,7 +1,7 @@
 import type React from 'react';
 import { cn } from '@/lib/utils';
 import { Code2, GitBranch, Zap } from 'lucide-react';
-import { FaReact, FaJava } from 'react-icons/fa';
+import { FaReact, FaJava, FaAndroid } from 'react-icons/fa';
 import {
   SiNextdotjs,
   SiTypescript,
@@ -13,13 +13,19 @@ import {
   SiFigma,
   SiGithub,
   SiPython,
-  SiMysql,
+  SiKotlin,
   SiDocker,
   SiVercel,
   SiFirebase,
   SiLinux,
+  SiGooglegemini,
+  SiGooglesearchconsole,
+  SiLighthouse,
 } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
 import { RiNodejsLine } from 'react-icons/ri';
+import { AiOutlineCodepen } from 'react-icons/ai';
+import { TbSql } from 'react-icons/tb';
 
 interface SkillBadgeWithIconsProps {
   name: string;
@@ -37,17 +43,24 @@ const iconMap: Record<string, React.ReactNode> = {
   Motion: <SiFramer className="w-4 h-4 text-yellow-500" />,
   GSAP: <Zap className="w-4 h-4 text-green-500" />,
   NodeJS: <RiNodejsLine className="w-5 h-5 text-green-600" />,
-  Firebase: <SiFirebase className="w-4 h-4 text-red-600" />,
+  Firebase: <SiFirebase className="w-4 h-4 text-orange-600" />,
   Postman: <SiPostman className="w-5 h-5 text-gray-600 dark:text-white" />,
   Git: <GitBranch className="w-4 h-4 text-orange-600" />,
   GitHub: <SiGithub className="w-4 h-4 text-gray-800 dark:text-white" />,
   Python: <SiPython className="w-4 h-4 text-blue-500" />,
   Java: <FaJava className="w-4 h-4 text-orange-600" />,
-  SQL: <SiMysql className="w-4 h-4 text-blue-500" />,
-  Docker: <SiDocker className="w-4 h-4 text-blue-600" />,
+  Kotlin: <SiKotlin className="w-4 h-4 text-purple-500" />,
+  AndroidStudio: <FaAndroid className="w-4 h-5 text-green-600" />,
+  SQL: <TbSql className="w-5 h-5 text-blue-400" />,
+  Docker: <SiDocker className="w-5 h-5 text-blue-400" />,
   Linux: <SiLinux className="w-4 h-4 text-yellow-600" />,
-  Vercel: <SiVercel className="w-4 h-4 text-black dark:text-white" />,
   Figma: <SiFigma className="w-4 h-4 text-purple-500" />,
+  GSC: <SiGooglesearchconsole className="w-5 h-5 text-white" />,
+  Lighthouse: <SiLighthouse className="w-4 h-4 text-orange-400" />,
+  Vercel: <SiVercel className="w-4 h-4 text-black dark:text-white" />,
+  VSCode: <VscVscode className="w-5 h-5 text-blue-600" />,
+  Cursor: <AiOutlineCodepen className="w-5 h-5 text-black dark:text-white" />,
+  Gemini: <SiGooglegemini className="w-5 h-5 text-blue-600" />,
 };
 
 export function SkillBadgeWithIcons({
