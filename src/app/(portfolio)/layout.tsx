@@ -11,7 +11,8 @@ export default function PortfolioLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const activeSection = pathname.substring(1);
+  // If pathname is '/', the section is 'about'. Otherwise, extract from path.
+  const activeSection = pathname === '/' ? 'about' : pathname.substring(1);
 
   return (
     <div className="min-h-screen bg-background">
