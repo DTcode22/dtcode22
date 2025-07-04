@@ -1,77 +1,97 @@
-import { SectionHeader } from '@/components/shared/section-header';
-import { ProjectCard } from '@/components/shared/project-card';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Github, ExternalLink } from 'lucide-react';
 import { projects } from '@/data/projects';
-import { technologies } from '@/data/skills';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 export function ProjectsSection() {
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
-
   return (
-    <div className="space-y-32">
-      {/* Header */}
-      <section id="featured-projects" className="scroll-mt-20 space-y-8">
-        <SectionHeader
-          title="My Projects"
-          subtitle="A showcase of my recent work and personal projects that demonstrate my skills and passion for development"
-        />
+    <div className="space-y-16">
+      <h2 className="text-4xl font-bold text-center">Featured Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-32">
+        {projects.map((project, index) => (
+          <Card
+            key={index}
+            className="overflow-hidden bg-card hover:shadow-lg transition-shadow flex flex-col h-full"
+          >
+            {/* Media Section */}
+            <div className="h-96">
+              <div
+                className={`grid ${
+                  project.media.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
+                } h-full`}
+              >
+                {project.media.map((mediaItem, mediaIndex) => (
+                  <div
+                    key={mediaIndex}
+                    className="relative overflow-hidden h-full group"
+                  >
+                    {mediaItem.type === 'image' ? (
+                      <Image
+                        src={mediaItem.url}
+                        alt={project.title}
+                        fill
+                        object-cover="true"
+                        className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <video
+                        src={mediaItem.url}
+                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
 
-        <h2 className="text-3xl font-bold">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {featuredProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-              featured={true}
-              githubUrl={project.githubUrl}
-              liveUrl={project.liveUrl}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Other Projects */}
-      <section id="other-projects" className="scroll-mt-20 space-y-8">
-        <h2 className="text-3xl font-bold">Other Projects</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {otherProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-              featured={false}
-              githubUrl={project.githubUrl}
-              liveUrl={project.liveUrl}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Technologies */}
-      <section id="technologies" className="scroll-mt-20 space-y-8 pb-48">
-        <h2 className="text-3xl font-bold">Technologies I Use</h2>
-        <div className="grid md:grid-cols-4 gap-4">
-          {Object.entries(technologies).map(([category, techs]) => (
-            <Card key={category}>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg capitalize">{category}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                {techs.map((tech) => (
-                  <Badge key={tech} variant="outline" className="mr-1 mb-1">
-                    {tech}
+            {/* Content Section */}
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-muted-foreground mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag, tagIndex) => (
+                  <Badge key={tagIndex} variant="secondary">
+                    {tag}
                   </Badge>
                 ))}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto pt-4">
+                {project.demoUrl && (
+                  <Button asChild className="w-full h-9 sm:w-auto">
+                    <Link href={project.demoUrl} target="_blank">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Demo
+                    </Link>
+                  </Button>
+                )}
+                {project.githubUrl && (
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="w-full sm:w-auto"
+                  >
+                    <Link href={project.githubUrl} target="_blank">
+                      <Github className="mr-2 h-4 w-4" />
+                      Source Code
+                    </Link>
+                  </Button>
+                )}
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

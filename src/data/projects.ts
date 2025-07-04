@@ -1,46 +1,76 @@
+type MediaItem = {
+  type: 'image' | 'video';
+  url: string;
+};
+
 export interface Project {
-  title: string
-  description: string
-  tech: string[]
-  featured: boolean
-  githubUrl?: string
-  liveUrl?: string
+  title: string;
+  description: string;
+  media: MediaItem[];
+  tags: string[];
+  demoUrl?: string;
+  githubUrl?: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: 'theMERCURY.ai',
     description:
-      "A full-stack e-commerce solution with React, Node.js, and PostgreSQL featuring real-time inventory management, payment processing, and admin dashboard.",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe", "Redis"],
-    featured: true,
-    githubUrl: "https://github.com/johndoe/ecommerce",
-    liveUrl: "https://ecommerce-demo.com",
+      "A showcase web application for 'theMERCURY.ai', an AI-powered video intelligence platform. It demonstrates advanced video analytics, threat detection, and workforce optimization capabilities. ",
+    media: [
+      {
+        type: 'image',
+        url: '/mercury.png',
+      },
+    ],
+    tags: [
+      'Next.js 15',
+      'TypeScript',
+      'Tailwind CSS 4',
+      'Framer Motion',
+      'GSAP',
+    ],
+    demoUrl: 'https://themercury.vercel.app/',
+    githubUrl: 'https://github.com/DTcode22/themercury',
   },
   {
-    title: "Task Management App",
+    title: 'Laufer Driving School',
     description:
-      "A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking.",
-    tech: ["Next.js", "Socket.io", "MongoDB", "Tailwind"],
-    featured: true,
-    githubUrl: "https://github.com/johndoe/taskmanager",
-    liveUrl: "https://taskmanager-demo.com",
+      'A modern, responsive website for a driving school featuring course information, online booking, and pricing information. Built with Astro for optimal performance and SEO optimization.',
+    media: [
+      {
+        type: 'image',
+        url: '/laufer.png',
+      },
+    ],
+    tags: ['Astro', 'JavaScript', 'GSAP', 'Framer Motion'],
+    demoUrl: 'https://lauferkgdesign.netlify.app/',
+    githubUrl: 'https://github.com/dtcode22/lauferkg',
   },
   {
-    title: "AI Chat Bot",
+    title: 'Pattern Editor',
     description:
-      "An intelligent chatbot using OpenAI API and natural language processing with context awareness and multi-language support.",
-    tech: ["Python", "OpenAI", "Flask", "React"],
-    featured: false,
-    githubUrl: "https://github.com/johndoe/ai-chatbot",
+      'An interactive visual pattern generator with parameter controls used for a costum android live wallpaper app. Features include video and json export, canvas resizing and zoom options.',
+    media: [
+      {
+        type: 'image',
+        url: '/editor.png',
+      },
+    ],
+    tags: ['TypeScript', 'Next.js', 'Canvas', 'Math'],
+    demoUrl: 'https://pattern-editor-zhrt.vercel.app/',
+    githubUrl: 'https://github.com/dtcode22/pattern-editor',
   },
   {
-    title: "Weather Dashboard",
+    title: 'Dynamic Pattern Live Wallpaper',
     description:
-      "A responsive weather application with location-based forecasts, interactive maps, and weather alerts.",
-    tech: ["Vue.js", "Express", "Weather API", "Chart.js"],
-    featured: false,
-    githubUrl: "https://github.com/johndoe/weather-dashboard",
-    liveUrl: "https://weather-demo.com",
+      'An Android live wallpaper that generates mesmerizing dynamic patterns with customizable parameters and multiple operational modes.',
+    media: [
+      { type: 'image', url: '/dynamic-pattern.gif' },
+      { type: 'image', url: '/dynamic-pattern-static.jpg' },
+    ],
+    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Live Wallpaper'],
+    demoUrl: 'https://github.com/dtcode22/wpmod02',
+    githubUrl: 'https://github.com/dtcode22/wpmod02',
   },
-]
+];
