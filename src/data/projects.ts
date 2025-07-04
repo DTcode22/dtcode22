@@ -77,23 +77,22 @@ export const projects: Project[] = [
 export interface OtherProject {
   title: string;
   description: string;
-  tags: string[];
-  // An optional image for the project card
+  tags?: string[];
   image?: string;
 }
 
 export const otherProjects: OtherProject[] = [
   {
-    title: 'Admin Dashboard (NDA)',
+    title: 'Svelte Admin Dashboard',
     description:
-      'Developed a comprehensive admin dashboard for an e-commerce client using Svelte and Firebase. The project involved creating a secure, user-friendly interface for managing products, orders, authentication, and file storage. Due to a non-disclosure agreement, I cannot share the source code or a live demo.',
-    tags: ['Svelte', 'Firebase', 'Node.js', 'Tailwind CSS', 'NDA'],
-    image: '/dashboard.png',
+      'Developed a comprehensive admin dashboard for an e-commerce client using Svelte and Firebase. The project involved creating a user-friendly interface for managing products, services, filter by category and file storage. Due to a non-disclosure agreement, I cannot share the source code or a live demo.',
+    tags: ['Svelte', 'Firebase', 'Node.js', 'Tailwind CSS'],
+    image: '/dashboard1.png',
   },
   {
-    title: 'CLI Automation Tool',
+    title: 'Webcam Filter',
     description:
-      'A personal project to automate repetitive development tasks. This command-line interface tool, built with Node.js, helps in scaffolding new projects, managing local development environments, and running batch scripts to improve workflow efficiency.',
-    tags: ['Node.js', 'TypeScript', 'Commander.js', 'CLI'],
+      'Webcam filter with white dots filter includes record start/stop,  and download option runnable on desktop/mobile in browser',
+    image: '/webcam16.png',
   },
 ];

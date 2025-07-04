@@ -67,7 +67,6 @@ export function ProjectCard({
           {githubUrl && (
             <Button
               asChild
-              // Use the glassy style to give it more presence
               className="bg-background/60 backdrop-blur-sm border border-border/50 hover:bg-background/80 w-full sm:w-auto"
             >
               <Link href={githubUrl} target="_blank">
