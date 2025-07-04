@@ -20,7 +20,7 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/mercury.png',
+        url: '/mercury4.png',
       },
     ],
     tags: [
@@ -72,5 +72,28 @@ export const projects: Project[] = [
     tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Live Wallpaper'],
     demoUrl: 'https://github.com/dtcode22/wpmod02',
     githubUrl: 'https://github.com/dtcode22/wpmod02',
+  },
+];
+export interface OtherProject {
+  title: string;
+  description: string;
+  tags: string[];
+  // An optional image for the project card
+  image?: string;
+}
+
+export const otherProjects: OtherProject[] = [
+  {
+    title: 'Admin Dashboard (NDA)',
+    description:
+      'Developed a comprehensive admin dashboard for an e-commerce client using Svelte and Firebase. The project involved creating a secure, user-friendly interface for managing products, orders, authentication, and file storage. Due to a non-disclosure agreement, I cannot share the source code or a live demo.',
+    tags: ['Svelte', 'Firebase', 'Node.js', 'Tailwind CSS', 'NDA'],
+    image: '/dashboard.png',
+  },
+  {
+    title: 'CLI Automation Tool',
+    description:
+      'A personal project to automate repetitive development tasks. This command-line interface tool, built with Node.js, helps in scaffolding new projects, managing local development environments, and running batch scripts to improve workflow efficiency.',
+    tags: ['Node.js', 'TypeScript', 'Commander.js', 'CLI'],
   },
 ];

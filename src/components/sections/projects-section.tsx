@@ -17,11 +17,11 @@ export function ProjectsSection() {
             className="overflow-hidden bg-card hover:shadow-lg transition-shadow flex flex-col h-full"
           >
             {/* Media Section */}
-            <div className="h-96">
+            <div className="relative aspect-video">
               <div
                 className={`grid ${
                   project.media.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
-                } h-full`}
+                } absolute inset-0`}
               >
                 {project.media.map((mediaItem, mediaIndex) => (
                   <div
@@ -33,7 +33,6 @@ export function ProjectsSection() {
                         src={mediaItem.url}
                         alt={project.title}
                         fill
-                        object-cover="true"
                         className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (

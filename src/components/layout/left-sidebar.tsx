@@ -30,7 +30,7 @@ export function LeftSidebar() {
                 className="flex items-center text-sm text-muted-foreground hover:text-primary"
                 target="_blank"
               >
-                <Twitter className="w-4 h-4 mr-2" />x
+                <Twitter className="w-4 h-4 mr-2" />X
               </a>
               <a
                 href="mailto:dejant999@gmail.com"
