@@ -1,4 +1,4 @@
-import { Github, Mail, Twitter } from 'lucide-react';
+import { Github, LinkedinIcon, Mail, Twitter } from 'lucide-react';
 import Image from 'next/image';
 
 export function LeftSidebar() {
@@ -26,11 +26,12 @@ export function LeftSidebar() {
                 GitHub
               </a>
               <a
-                href="https://x.com/wired761"
+                href="https://www.linkedin.com/in/dejan-turuntas/"
                 className="flex items-center text-sm text-muted-foreground hover:text-primary"
                 target="_blank"
               >
-                <Twitter className="w-4 h-4 mr-2" />X
+                <LinkedinIcon className="w-4 h-4 mr-2" />
+                Linkedin
               </a>
               <a
                 href="mailto:dejant999@gmail.com"
@@ -38,6 +39,13 @@ export function LeftSidebar() {
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Email
+              </a>
+              <a
+                href="https://x.com/wired761"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary"
+                target="_blank"
+              >
+                <Twitter className="w-4 h-4 mr-2" />X
               </a>
             </div>
           </div>

@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import Link from 'next/link';
+import { SectionNavigator } from '../shared/section-navigator';
 
 export function ContactSection() {
   return (
@@ -35,11 +37,13 @@ export function ContactSection() {
               <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Email</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                john.doe@example.com
+                dejant999@gmail.com
               </p>
-              <Button variant="outline" size="sm">
-                Send Email
-              </Button>
+              <Link href="mailto:dejant999@gmail.com">
+                <Button variant="outline" size="sm" className="cursor-pointer">
+                  Send Email
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -48,11 +52,16 @@ export function ContactSection() {
               <Linkedin className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-semibold mb-2">LinkedIn</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                linkedin.com/in/johndoe
+                linkedin.com/in/dejan-turuntas
               </p>
-              <Button variant="outline" size="sm">
-                Connect
-              </Button>
+              <Link
+                href="https://www.linkedin.com/in/dejan-turuntas/"
+                target="_blank"
+              >
+                <Button variant="outline" size="sm" className="cursor-pointer">
+                  Connect
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -61,11 +70,13 @@ export function ContactSection() {
               <Github className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-semibold mb-2">GitHub</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                github.com/johndoe
+                github.com/dtcode22
               </p>
-              <Button variant="outline" size="sm">
-                Follow
-              </Button>
+              <Link href="https://github.com/DTcode22" target="_blank">
+                <Button variant="outline" size="sm" className="cursor-pointer">
+                  Follow
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -73,12 +84,15 @@ export function ContactSection() {
             <CardContent className="p-6">
               <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Location</h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                San Francisco, CA
-              </p>
-              <Button variant="outline" size="sm">
-                View Map
-              </Button>
+              <p className="text-sm text-muted-foreground mb-3">BiH/Serbia</p>
+              <Link
+                href="https://maps.app.goo.gl/pYi6hpk1LeHTVREM8"
+                target="_blank"
+              >
+                <Button variant="outline" size="sm" className="cursor-pointer">
+                  View Map
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
@@ -134,26 +148,10 @@ export function ContactSection() {
 
       {/* Availability */}
       <section id="availability" className="scroll-mt-20 space-y-8">
-        <h2 className="text-3xl font-bold">Current Availability</h2>
-        <Card className="max-w-2xl mx-auto">
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-                  <span className="font-semibold">
-                    Available for new projects
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  I&apos;m currently accepting new freelance projects and
-                  full-time opportunities. Response time is typically within 24
-                  hours.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        <SectionNavigator
+          id="availability"
+          currentSection="contact"
+        ></SectionNavigator>
       </section>
     </div>
   );

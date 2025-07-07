@@ -1,12 +1,7 @@
 import { SectionHeader } from '@/components/shared/section-header';
 import { ArticleCard } from '@/components/shared/article-card';
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { writings } from '@/data/writings';
+import { SectionNavigator } from '../shared/section-navigator';
 
 export function WritingsSection() {
   const featuredWritings = writings.filter((w) => w.featured);
@@ -62,33 +57,10 @@ export function WritingsSection() {
 
       {/* Topics */}
       <section id="topics" className="scroll-mt-20 space-y-8">
-        <h2 className="text-3xl font-bold">Topics I Write About</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Frontend Development</CardTitle>
-              <CardDescription>
-                React, Next.js, TypeScript, and modern frontend architectures
-              </CardDescription>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Backend & APIs</CardTitle>
-              <CardDescription>
-                Node.js, databases, API design, and server-side development
-              </CardDescription>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Developer Experience</CardTitle>
-              <CardDescription>
-                Tools, workflows, best practices, and productivity tips
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
+        <SectionNavigator
+          id="topics"
+          currentSection="writings"
+        ></SectionNavigator>
       </section>
     </div>
   );

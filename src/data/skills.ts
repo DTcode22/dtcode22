@@ -1,6 +1,8 @@
 export const skillsAndTools = [
   { name: 'ReactJs' },
   { name: 'NextJs' },
+  { name: 'SvelteJs' },
+  { name: 'AstroJs' },
   { name: 'JavaScript' },
   { name: 'TypeScript' },
   { name: 'Tailwind' },

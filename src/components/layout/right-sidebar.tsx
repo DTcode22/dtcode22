@@ -25,7 +25,7 @@ const sectionHeadings = {
     { id: 'writings-intro', title: 'Introduction' },
     { id: 'featured-articles', title: 'Featured Articles' },
     { id: 'recent-articles', title: 'Recent Articles' },
-    { id: 'topics', title: 'Topics' },
+    { id: 'topics', title: 'Navigation' },
   ],
   contact: [
     { id: 'contact-intro', title: 'Introduction' },

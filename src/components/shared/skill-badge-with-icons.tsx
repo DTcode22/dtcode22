@@ -21,9 +21,10 @@ import {
   SiGooglegemini,
   SiGooglesearchconsole,
   SiLighthouse,
+  SiAstro,
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
-import { RiNodejsLine } from 'react-icons/ri';
+import { RiNodejsLine, RiSvelteLine } from 'react-icons/ri';
 import { AiOutlineCodepen } from 'react-icons/ai';
 import { TbSql } from 'react-icons/tb';
 
@@ -36,6 +37,8 @@ interface SkillBadgeWithIconsProps {
 const iconMap: Record<string, React.ReactNode> = {
   ReactJs: <FaReact className="w-4 h-4 text-blue-400" />,
   NextJs: <SiNextdotjs className="w-4 h-4" />,
+  SvelteJs: <RiSvelteLine className="w-4 h-4 text-red-400" />,
+  AstroJs: <SiAstro className="w-4 h-4" />,
   JavaScript: <SiJavascript className="w-4 h-4 text-yellow-500" />,
   TypeScript: <SiTypescript className="w-4 h-4 text-blue-700" />,
   Tailwind: <SiTailwindcss className="w-4 h-4 text-cyan-500" />,
