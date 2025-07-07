@@ -115,7 +115,7 @@ export function ProjectsSection() {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-contain md:rounded-l-lg md:rounded-r-none"
+                      className="object-fill md:rounded-l-lg md:rounded-r-none"
                     />
                   </div>
                 )}
@@ -138,6 +138,27 @@ export function ProjectsSection() {
                       </Badge>
                     ))}
                   </div>
+                  {/* Action Buttons */}
+                  {(project.demoUrl || project.githubUrl) && (
+                    <div className="flex items-center gap-4 mt-4">
+                      {project.demoUrl && (
+                        <Button asChild size="sm">
+                          <Link href={project.demoUrl} target="_blank">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            View Demo
+                          </Link>
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button variant="outline" asChild size="sm">
+                          <Link href={project.githubUrl} target="_blank">
+                            <Github className="mr-2 h-4 w-4" />
+                            Source Code
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </Card>

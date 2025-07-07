@@ -6,8 +6,12 @@ export function SkillsSection() {
   return (
     <section id="skills-tools" className="scroll-mt-20 space-y-8">
       <div className="flex align-top">
-        <ChevronRight height={42} width={32}></ChevronRight>
-        <h2 className="text-3xl font-bold">
+        <ChevronRight
+          height={42}
+          width={32}
+          className="not-sm:w-7 not-sm:h-10"
+        ></ChevronRight>
+        <h2 className="text-3xl font-bold not-sm:text-2xl">
           <code className="tracking-tight">devDependencies</code>
         </h2>
       </div>

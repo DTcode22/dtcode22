@@ -79,6 +79,8 @@ export interface OtherProject {
   description: string;
   tags?: string[];
   image?: string;
+  demoUrl?: string;
+  githubUrl?: string;
 }
 
 export const otherProjects: OtherProject[] = [
@@ -94,5 +96,7 @@ export const otherProjects: OtherProject[] = [
     description:
       'Webcam filter with white dots filter includes record start/stop,  and download option runnable on desktop/mobile in browser',
     image: '/webcam16.png',
+    demoUrl: '#',
+    githubUrl: '#',
   },
 ];

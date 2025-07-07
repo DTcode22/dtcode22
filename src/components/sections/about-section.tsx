@@ -32,7 +32,7 @@ export function AboutSection() {
       <section id="background" className="scroll-mt-20 space-y-6">
         <div className="flex align-top">
           <ChevronRight height={42} width={32}></ChevronRight>
-          <h2 className="text-3xl font-bold">
+          <h2 className="text-3xl font-bold not-sm:text-3xl">
             <code className="tracking-wider">whoami</code>
           </h2>
         </div>
@@ -56,31 +56,20 @@ export function AboutSection() {
       </section>
       <section id="skills" className="scroll-mt-20 space-y-6">
         <div className="flex align-top">
-          <ChevronRight height={42} width={32}></ChevronRight>
-          <h2 className="text-3xl font-bold">
+          <ChevronRight
+            height={42}
+            width={32}
+            className="not-sm:w-7 not-sm:h-10"
+          ></ChevronRight>
+          <h2 className="text-3xl font-bold not-sm:text-2xl">
             <code className="tracking-tighter">credentials-manager</code>
           </h2>
         </div>
         <div className="text-primary pl-8 flex flex-col gap-1">
-          {/* <div className="wrap">
-            <code>
-              {' '}
-              npx create-next-app@latest (--disable-git fixed-undocumented{' '}
-            </code>
-            <a
-              href="https://x.com/wired761/status/1936966124551426424"
-              className="text-sky-400 underline"
-              target="_blank"
-            >
-              {' '}
-              see here
-            </a>
-            )
-          </div> */}
           <code>git init</code>
 
           <code>git config user.name</code>
-          <div className="wrap flex items-center pb-2 pl-18">
+          <div className="wrap flex items-center pb-2 pl-18 not-sm:pl-6">
             <ChevronRight></ChevronRight>
             <a
               href="https://github.com/dtcode22"
@@ -92,7 +81,7 @@ export function AboutSection() {
             </a>
           </div>
           <code>git config user.email</code>
-          <div className="wrap flex items-center gap-1 pb-2 pl-18">
+          <div className="wrap flex items-center gap-1 pb-2 pl-18 not-sm:pl-6">
             <ChevronRight></ChevronRight>
             <a
               href="mailto:dejant999@gmail.com"
@@ -104,15 +93,19 @@ export function AboutSection() {
             </a>
           </div>
           <code>git remote set origin</code>
-          <div className="wrap flex items-center gap-1 pb-2 pl-18">
-            <ChevronRight></ChevronRight>
+          <div className="flex items-center gap-1 pb-2 pl-18 not-sm:pl-0">
+            <ChevronRight className="not-sm:hidden"></ChevronRight>
             <a
               href="https://github.com/supdiff"
               target="_blank"
               className="flex items-center gap-1 underline"
             >
               https://github.com/supdiff/dtc-portfolio
-              <ExternalLink height={12} width={12}></ExternalLink>
+              <ExternalLink
+                height={12}
+                width={12}
+                className="not-sm:hidden"
+              ></ExternalLink>
             </a>
           </div>
         </div>
@@ -120,8 +113,12 @@ export function AboutSection() {
 
       <section id="experience" className="scroll-mt-20 space-y-8">
         <div className="flex align-top">
-          <ChevronRight height={42} width={32}></ChevronRight>
-          <h2 className="text-3xl font-bold">
+          <ChevronRight
+            height={42}
+            width={32}
+            className="not-sm:w-7 not-sm:h-10"
+          ></ChevronRight>
+          <h2 className="text-3xl font-bold not-sm:text-2xl">
             <code className="tracking-normal">getWorkExperience&#40;&#41;</code>
           </h2>
         </div>
