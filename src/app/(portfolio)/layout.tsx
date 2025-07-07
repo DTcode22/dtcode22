@@ -15,7 +15,7 @@ export default function PortfolioLayout({
   const activeSection = pathname === '/' ? 'about' : pathname.substring(1);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background max-w-screen-2xl m-auto">
       <Navbar activeSection={activeSection} />
 
       <div className="pt-16 flex">
