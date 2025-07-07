@@ -2,14 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Github, ExternalLink } from 'lucide-react';
 import { projects, otherProjects } from '@/data/projects';
-import { technologies } from '@/data/skills';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { SectionNavigator } from '../shared/section-navigator';
 
 export function ProjectsSection() {
   return (
-    <div className="space-y-32 pb-16">
+    <div className="space-y-16 pb-16">
       {/* Featured Projects Section */}
       <section id="featured-projects" className="scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-16">
@@ -144,29 +144,9 @@ export function ProjectsSection() {
           ))}
         </div>
       </section>
-
-      {/* Technologies Section */}
-      <section id="technologies" className="scroll-mt-20 space-y-8">
-        <h2 className="text-3xl font-bold">Core Technologies</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Object.entries(technologies).map(([category, techList]) => (
-            <Card key={category}>
-              <CardHeader>
-                <CardTitle className="text-lg capitalize">{category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {techList.map((tech) => (
-                    <li key={tech} className="text-sm text-muted-foreground">
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+      <div className="scroll-mt-20">
+        <SectionNavigator currentSection="projects" id="nav" />
+      </div>
     </div>
   );
 }

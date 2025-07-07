@@ -9,6 +9,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { SkillsSection } from '../shared/skills-section';
 import { techStack, backendStack } from '@/data/badge';
+import { SectionNavigator } from '../shared/section-navigator';
 
 export function AboutSection() {
   return (
@@ -179,6 +180,7 @@ export function AboutSection() {
       </section>
 
       <SkillsSection />
+      <SectionNavigator currentSection="about"></SectionNavigator>
     </div>
   );
 }

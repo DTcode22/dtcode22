@@ -10,28 +10,28 @@ interface TableOfContentsProps {
 
 const sectionHeadings = {
   about: [
-    { id: 'introduction', title: 'Greetings', level: 1 },
-    { id: 'background', title: 'whoami', level: 1 },
-    { id: 'skills', title: 'credentials', level: 1 },
-    { id: 'experience', title: 'getWork()', level: 1 },
-    { id: 'skills-tools', title: 'dependencies', level: 1 },
+    { id: 'introduction', title: 'Greetings' },
+    { id: 'background', title: 'whoami' },
+    { id: 'skills', title: 'credentials' },
+    { id: 'experience', title: 'getWork()' },
+    { id: 'skills-tools', title: 'dependencies' },
   ],
   projects: [
-    { id: 'featured-projects', title: 'Featured Projects', level: 1 },
-    { id: 'other-projects', title: 'Other Projects', level: 1 },
-    { id: 'technologies', title: 'Technologies', level: 1 },
+    { id: 'featured-projects', title: 'Featured Projects' },
+    { id: 'other-projects', title: 'Other Projects' },
+    { id: 'nav', title: 'Navigation' },
   ],
   writings: [
-    { id: 'writings-intro', title: 'Introduction', level: 1 },
-    { id: 'featured-articles', title: 'Featured Articles', level: 1 },
-    { id: 'recent-articles', title: 'Recent Articles', level: 1 },
-    { id: 'topics', title: 'Topics', level: 1 },
+    { id: 'writings-intro', title: 'Introduction' },
+    { id: 'featured-articles', title: 'Featured Articles' },
+    { id: 'recent-articles', title: 'Recent Articles' },
+    { id: 'topics', title: 'Topics' },
   ],
   contact: [
-    { id: 'contact-intro', title: 'Introduction', level: 1 },
-    { id: 'contact-methods', title: 'Contact Methods', level: 1 },
-    { id: 'contact-form', title: 'Send Message', level: 1 },
-    { id: 'availability', title: 'Availability', level: 1 },
+    { id: 'contact-intro', title: 'Introduction' },
+    { id: 'contact-methods', title: 'Contact Methods' },
+    { id: 'contact-form', title: 'Send Message' },
+    { id: 'availability', title: 'Availability' },
   ],
 };
 

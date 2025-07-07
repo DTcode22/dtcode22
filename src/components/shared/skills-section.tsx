@@ -22,14 +22,6 @@ export function SkillsSection() {
           />
         ))}
       </div>
-
-      {/* Optional: Add a note about continuous learning */}
-      <div className="mt-8 p-4 bg-muted/30 rounded-lg border border-border/50">
-        <p className="text-sm text-muted-foreground text-center">
-          Always learning and exploring new technologies to stay current with
-          industry trends
-        </p>
-      </div>
     </section>
   );
 }
