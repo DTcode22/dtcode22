@@ -12,7 +12,7 @@ type SectionId = 'about' | 'projects' | 'writings' | 'contact';
 
 interface SectionNavigatorProps {
   currentSection: SectionId;
-  id: string;
+  id?: string;
 }
 
 const sections = [
