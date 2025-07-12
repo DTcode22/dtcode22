@@ -1,3 +1,4 @@
+// src/components/sections/projects-section.tsx
 import Link from 'next/link';
 import Image from 'next/image';
 import { Github, ExternalLink } from 'lucide-react';
@@ -70,12 +71,12 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto pt-4">
+                <div className="flex flex-col min-[1382px]:flex-row items-center gap-4 mt-auto pt-4">
                   {project.demoUrl && (
                     <Button
                       asChild
                       variant={'demo'}
-                      className="w-full h-9 sm:w-auto gap-0"
+                      className="w-full h-9 min-[1382px]:w-auto"
                     >
                       <Link href={project.demoUrl} target="_blank">
                         <ExternalLink className="mr-2 h-4 w-4" />
@@ -87,7 +88,7 @@ export function ProjectsSection() {
                     <Button
                       variant="outline"
                       asChild
-                      className="w-full sm:w-auto gap-0"
+                      className="w-full min-[1382px]:w-auto"
                     >
                       <Link href={project.githubUrl} target="_blank">
                         <Github className="mr-2 h-4 w-4" />

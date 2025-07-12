@@ -1,3 +1,4 @@
+// src/components/layout/right-sidebar.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -29,19 +30,36 @@ const sectionHeadings = {
   ],
   contact: [
     { id: 'contact-intro', title: 'Introduction' },
-    { id: 'contact-methods', title: 'Contact Methods' },
-    { id: 'contact-form', title: 'Send Message' },
-    { id: 'availability', title: 'Availability' },
+    { id: 'interactive-terminal', title: 'Interactive Terminal' },
+    { id: 'message-form', title: 'Direct Message' },
+    { id: 'navigation', title: 'Navigation' },
   ],
 };
 
 export function RightSidebar({ activeSection }: TableOfContentsProps) {
   const [activeHeading, setActiveHeading] = useState('');
+  const [isDirectMessageVisible, setIsDirectMessageVisible] = useState(false);
+
+  // Listen for the custom event dispatched from the contact terminal
+  useEffect(() => {
+    const handleShowLink = () => setIsDirectMessageVisible(true);
+    window.addEventListener('showDirectMessageLink', handleShowLink);
+    return () => {
+      window.removeEventListener('showDirectMessageLink', handleShowLink);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const headings =
+      const allHeadings =
         sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
+      const headings =
+        activeSection === 'contact'
+          ? allHeadings.filter(
+              (h) => h.id !== 'message-form' || isDirectMessageVisible
+            )
+          : allHeadings;
+
       if (headings.length === 0) return;
 
       const mainElement = document.querySelector('main');
@@ -65,13 +83,12 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
 
       if (!headingElements.length) return;
 
-      const offset = 150; // The point from the top of the viewport to trigger a heading change.
+      const offset = 150;
       const scrollPosition = mainElement.scrollTop;
       const maxScroll = mainElement.scrollHeight - mainElement.clientHeight;
 
       let currentActiveHeading = '';
 
-      // Find the last heading that is above the scroll threshold.
       for (let i = headingElements.length - 1; i >= 0; i--) {
         if (headingElements[i].offsetTop <= scrollPosition + offset) {
           currentActiveHeading = headingElements[i].id;
@@ -79,15 +96,11 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
         }
       }
 
-      // If scrolled to the absolute bottom, the last heading is always active.
-      // A small tolerance (e.g., 10px) is used to ensure it triggers.
       if (scrollPosition >= maxScroll - 10) {
         currentActiveHeading = headingElements[headingElements.length - 1].id;
       }
 
-      // If no heading is active (i.e., we are at the very top, before the first heading),
-      // default to the first one.
-      if (!currentActiveHeading) {
+      if (!currentActiveHeading && headingElements.length > 0) {
         currentActiveHeading = headingElements[0].id;
       }
 
@@ -105,18 +118,21 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
         mainElement.removeEventListener('scroll', handleScroll);
       }
     };
-  }, [activeSection]);
+  }, [activeSection, isDirectMessageVisible]);
 
-  // Reset active heading when section changes
+  // Reset states when section changes
   useEffect(() => {
+    // Hide the direct message link if we navigate away from the contact page
+    if (activeSection !== 'contact') {
+      setIsDirectMessageVisible(false);
+    }
+
     const headings =
       sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
     if (headings.length > 0) {
       setActiveHeading(headings[0].id);
-      // Give DOM time to update before trying to scroll to top
       setTimeout(() => {
-        const mainElement = document.querySelector('main');
-        mainElement?.scrollTo({ top: 0 });
+        document.querySelector('main')?.scrollTo({ top: 0 });
       }, 0);
     }
   }, [activeSection]);
@@ -131,19 +147,26 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
       const relativeTop = rect.top - mainRect.top + mainElement.scrollTop;
 
       mainElement.scrollTo({
-        top: relativeTop - 100, // Adjusted offset for better scroll-to position
+        top: relativeTop - 100,
         behavior: 'smooth',
       });
     }
   };
 
-  const currentHeadings =
+  const allHeadingsForCurrentSection =
     sectionHeadings[activeSection as keyof typeof sectionHeadings] || [];
+
+  // Conditionally filter the headings for the contact page
+  const currentHeadings =
+    activeSection === 'contact'
+      ? allHeadingsForCurrentSection.filter(
+          (heading) => heading.id !== 'message-form' || isDirectMessageVisible
+        )
+      : allHeadingsForCurrentSection;
 
   return (
     <aside className="hidden lg:block w-[18vw] h-[calc(100vh-4rem)] bg-muted/30 p-6">
       <div className="sticky top-6 space-y-6">
-        {/* Table of Contents */}
         {currentHeadings.length > 0 && (
           <Card>
             <CardHeader>
@@ -151,12 +174,9 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
             </CardHeader>
             <CardContent className="space-y-1">
               <div className="relative">
-                {/* Progress indicator line */}
                 <div className="absolute left-0 top-0 bottom-0 w-px bg-border"></div>
-
                 {currentHeadings.map((heading) => (
                   <div key={heading.id} className="relative">
-                    {/* Active indicator dot */}
                     <div
                       className={cn(
                         'absolute -left-[3px] top-3 w-1.5 h-1.5 rounded-full transition-all duration-200',
@@ -165,12 +185,9 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
                           : 'bg-muted-foreground/30 scale-75'
                       )}
                     />
-
-                    {/* Progress line for active section */}
                     {activeHeading === heading.id && (
                       <div className="absolute left-0 top-0 bottom-0 w-px bg-primary"></div>
                     )}
-
                     <button
                       onClick={() => scrollToHeading(heading.id)}
                       className={cn(
@@ -189,12 +206,11 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
           </Card>
         )}
 
-        {/* Latest Blog Posts */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Latest Posts</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-2">
             <div>
               <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
                 Building Scalable React Apps
@@ -213,22 +229,6 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
               </h4>
               <p className="text-xs text-muted-foreground">Jan 5, 2024</p>
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Current Status */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Current Status</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center mb-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-              <span className="text-sm font-medium">Available for work</span>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Open to new opportunities and interesting projects
-            </p>
           </CardContent>
         </Card>
       </div>

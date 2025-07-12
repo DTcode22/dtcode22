@@ -6,11 +6,17 @@ export function LeftSidebar() {
     <aside className="hidden lg:block w-[18vw] h-[calc(100vh-4rem)] bg-muted/30 pt-12 px-6 pb-6">
       <div className="sticky top-6">
         <div className="text-center mb-6">
-          <div className="w-44 h-44 bg-primary/10 mx-auto mb-4 flex items-center justify-center">
-            <Image src="/ghibli.png" alt="me" height={176} width={176}></Image>
+          <div className="w-36 h-36 bg-primary/10 mx-auto mb-4 flex items-center justify-center">
+            <Image src="/ghibli.png" alt="me" height={144} width={144}></Image>
           </div>
           <h3 className="font-semibold text-lg">DTcode22</h3>
           <p className="text-sm text-muted-foreground">Full Stack Developer</p>
+          <div className="flex items-center justify-center mb-2 mt-1">
+            <div className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></div>
+            <span className="text-sm text-muted-foreground">
+              Available for work
+            </span>
+          </div>
         </div>
 
         <div className="space-y-4">
