@@ -75,7 +75,7 @@ export function ProjectsSection() {
                     <Button
                       asChild
                       variant={'demo'}
-                      className="w-full h-9 sm:w-auto"
+                      className="w-full h-9 sm:w-auto gap-0"
                     >
                       <Link href={project.demoUrl} target="_blank">
                         <ExternalLink className="mr-2 h-4 w-4" />
@@ -87,7 +87,7 @@ export function ProjectsSection() {
                     <Button
                       variant="outline"
                       asChild
-                      className="w-full sm:w-auto"
+                      className="w-full sm:w-auto gap-0"
                     >
                       <Link href={project.githubUrl} target="_blank">
                         <Github className="mr-2 h-4 w-4" />
@@ -144,9 +144,13 @@ export function ProjectsSection() {
                   </div>
                   {/* Action Buttons */}
                   {(project.demoUrl || project.githubUrl) && (
-                    <div className="flex items-center gap-4 mt-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
                       {project.demoUrl && (
-                        <Button asChild size="sm" variant={'demo'}>
+                        <Button
+                          asChild
+                          variant={'demo'}
+                          className="w-full h-9 sm:w-auto gap-0"
+                        >
                           <Link href={project.demoUrl} target="_blank">
                             <ExternalLink className="mr-2 h-4 w-4" />
                             View Demo
@@ -154,7 +158,11 @@ export function ProjectsSection() {
                         </Button>
                       )}
                       {project.githubUrl && (
-                        <Button variant="outline" asChild size="sm">
+                        <Button
+                          variant="outline"
+                          asChild
+                          className="w-full sm:w-auto gap-0"
+                        >
                           <Link href={project.githubUrl} target="_blank">
                             <Github className="mr-2 h-4 w-4" />
                             Source Code
