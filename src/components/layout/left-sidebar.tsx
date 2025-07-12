@@ -1,4 +1,4 @@
-import { Github, LinkedinIcon, Mail, Twitter } from 'lucide-react';
+import { Github, LinkedinIcon, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 export function LeftSidebar() {
@@ -39,13 +39,6 @@ export function LeftSidebar() {
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Email
-              </a>
-              <a
-                href="https://x.com/wired761"
-                className="flex items-center text-sm text-muted-foreground hover:text-primary"
-                target="_blank"
-              >
-                <Twitter className="w-4 h-4 mr-2" />X
               </a>
             </div>
           </div>

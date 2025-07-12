@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'dtc-portfolio',
-  description: 'Personal portfolio website',
+  title: 'DTCode22',
+  description: 'Personal portfolio',
+  icons: { icon: [{ url: '/favicon.svg' }] },
 };
 
 export default function RootLayout({

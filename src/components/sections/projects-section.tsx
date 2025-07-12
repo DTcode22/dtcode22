@@ -72,7 +72,11 @@ export function ProjectsSection() {
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto pt-4">
                   {project.demoUrl && (
-                    <Button asChild className="w-full h-9 sm:w-auto">
+                    <Button
+                      asChild
+                      variant={'demo'}
+                      className="w-full h-9 sm:w-auto"
+                    >
                       <Link href={project.demoUrl} target="_blank">
                         <ExternalLink className="mr-2 h-4 w-4" />
                         View Demo
@@ -142,7 +146,7 @@ export function ProjectsSection() {
                   {(project.demoUrl || project.githubUrl) && (
                     <div className="flex items-center gap-4 mt-4">
                       {project.demoUrl && (
-                        <Button asChild size="sm">
+                        <Button asChild size="sm" variant={'demo'}>
                           <Link href={project.demoUrl} target="_blank">
                             <ExternalLink className="mr-2 h-4 w-4" />
                             View Demo
