@@ -1,4 +1,3 @@
-// src/components/sections/contact-section.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -17,6 +16,7 @@ import {
 } from '@/components/ui/card';
 import { SectionNavigator } from '../shared/section-navigator';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 type HistoryItem = {
   id: number;
@@ -32,6 +32,16 @@ export function ContactSection() {
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
   useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
@@ -42,6 +52,68 @@ export function ContactSection() {
     setLastLoginDate(new Date().toString());
     inputRef.current?.focus();
   }, []);
+
+  const handleFormInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleMessageSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!WEB3FORMS_ACCESS_KEY) {
+      toast.error('Configuration Error', {
+        description:
+          'Please replace the placeholder Web3Forms access key in the contact section component.',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    const toastId = toast.loading('Sending your message...');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          from_name: 'DTC-Portfolio Contact Form',
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success('Message Sent!', {
+          id: toastId,
+          description: "Thanks for reaching out. I'll get back to you shortly.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        toast.error(`Error: ${result.message}`, {
+          id: toastId,
+          description:
+            'There was an issue sending your message. Please try again.',
+        });
+      }
+    } catch (error) {
+      toast.error('Network Error', {
+        id: toastId,
+        description:
+          'Could not connect to the server. Please check your connection.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // ... (The rest of the file is the same, no changes needed below this line)
 
   const commands: { [key: string]: () => React.ReactNode } = {
     help: () => (
@@ -162,11 +234,7 @@ export function ContactSection() {
     setHistory((prev) => [...prev, { id: Date.now(), command: cmd, output }]);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-  };
-
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleTerminalSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (input.trim() === '') return;
     processCommand(input);
@@ -216,8 +284,8 @@ export function ContactSection() {
               <p>Welcome to my interactive contact terminal.</p>
               {lastLoginDate && <p>Last login: {lastLoginDate}</p>}
               <p>
-                Type <span className="text-green-400">&apos;help&apos;</span>{' '}
-                for a list of available commands.
+                Type <span className="text-green-400">'help'</span> for a list
+                of available commands.
               </p>
               {history.map((item) => (
                 <div key={item.id}>
@@ -229,7 +297,7 @@ export function ContactSection() {
                 </div>
               ))}
               <form
-                onSubmit={handleFormSubmit}
+                onSubmit={handleTerminalSubmit}
                 className="flex items-center gap-2"
               >
                 <label
@@ -243,7 +311,7 @@ export function ContactSection() {
                   id="terminal-input"
                   type="text"
                   value={input}
-                  onChange={handleInputChange}
+                  onChange={(e) => setInput(e.target.value)}
                   autoComplete="off"
                   className="bg-transparent border-none text-white focus:ring-0 w-full p-0 pl-2"
                 />
@@ -276,37 +344,67 @@ export function ContactSection() {
                     soon as possible.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input id="name" placeholder="Your name" />
+                <CardContent>
+                  <form onSubmit={handleMessageSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Name</Label>
+                        <Input
+                          id="name"
+                          placeholder="Your name"
+                          value={formData.name}
+                          onChange={handleFormInputChange}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="your.email@example.com"
+                          value={formData.email}
+                          onChange={handleFormInputChange}
+                          required
+                        />
+                      </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="subject">Subject</Label>
                       <Input
-                        id="email"
-                        type="email"
-                        placeholder="your.email@example.com"
+                        id="subject"
+                        placeholder="What's this about?"
+                        value={formData.subject}
+                        onChange={handleFormInputChange}
+                        required
                       />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="What's this about?" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell me about your project or just say hello!"
-                      rows={6}
-                    />
-                  </div>
-                  <Button className="w-full">
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message</Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Tell me about your project or just say hello!"
+                        rows={6}
+                        value={formData.message}
+                        onChange={handleFormInputChange}
+                        required
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        'Sending...'
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2" />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>

@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { Navbar } from '@/components/layout/navbar';
 import { LeftSidebar } from '@/components/layout/left-sidebar';
 import { RightSidebar } from '@/components/layout/right-sidebar';
+import { Toaster } from 'sonner';
 
 export default function PortfolioLayout({
   children,
@@ -17,6 +18,7 @@ export default function PortfolioLayout({
   return (
     <div className="min-h-screen bg-background max-w-[1920px] m-auto">
       <Navbar activeSection={activeSection} />
+      <Toaster richColors position="top-center" />
 
       <div className="pt-16 flex">
         <LeftSidebar />
