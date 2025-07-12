@@ -94,9 +94,17 @@ export const otherProjects: OtherProject[] = [
   {
     title: 'Webcam Filter',
     description:
-      'Webcam filter with white dots filter includes record start/stop,  and download option runnable on desktop/mobile in browser',
-    image: '/webcam16.png',
-    demoUrl: '#',
-    githubUrl: '#',
+      'Webcam filter with white dots filter includes record start/stop,  and download option runnable on desktop/mobile in browser.',
+    image: '/webcam.png',
+    demoUrl: 'https://webcamfilter.vercel.app/',
+    githubUrl: 'https://github.com/DTcode22',
+  },
+  {
+    title: 'PanningCSS',
+    description:
+      'Small CSS project featuring panning @keyframes integration with vanila CSS',
+    image: '/mountiants2.png',
+    demoUrl: 'https://pancss.netlify.app/',
+    githubUrl: 'https://github.com/DTcode22',
   },
 ];

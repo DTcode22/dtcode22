@@ -23,8 +23,7 @@ export function AboutSection() {
             <span className="font-size:100px;">&#128075;</span>
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            A full-stack developer, still figuring it out but making it look
-            intentional
+            A software engineer turning chaos into code
           </p>
         </div>
       </section>
@@ -48,7 +47,6 @@ export function AboutSection() {
               prefer modern tools.
               <br />
               - I&apos;ve done freelance work and collaborated on projects
-              <br />- Creative chaos meets organized perfectionism
               <br />- Questionable sense of humor
             </p>
           </div>
