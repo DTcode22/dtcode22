@@ -89,7 +89,7 @@ export const otherProjects: OtherProject[] = [
     description:
       'Developed a comprehensive admin dashboard for an e-commerce client using Svelte and Firebase. The project involved creating a user-friendly interface for managing products, services, filter by category and file storage. Due to a non-disclosure agreement, I cannot share the source code or a live demo.',
     tags: ['Svelte', 'Firebase', 'Node.js', 'Tailwind CSS'],
-    image: '/dashboard1.png',
+    image: '/dashb.png',
   },
   {
     title: 'Webcam Filter',
