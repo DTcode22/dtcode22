@@ -119,13 +119,37 @@ export function ContactSection() {
       return 'Terminal cleared.';
     },
     cat: () => (
-      <pre className="text-green-300">
+      <pre className="font-mono text-green-300 text-xs">
         {`
-    /\\_/\\
-   ( o.o )
-    > ^ <
+
+      \\\`*-.
+       )  _\`-.
+      .  : \`. .
+      : _   '  \\
+      ; *\` _.   \`*-._
+      \`-.-'          \`-.
+        ;       \`       \`.
+        :.       .        \\
+        . \\  .   :   .-'   .
+        '  \`+.;  ;  '      :
+        :  '  |    ;       ;-.
+        ; '   : :\`-:     _. \`* ;
+     .*' /  .*' ; .* \` - +'  \`*'
+     \`*-*   \`*-*  \`*-*'
 `}
       </pre>
+    ),
+    exit: () => (
+      <pre className="text-green-300">{`
+        ████████████████████████████████████████████
+        ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
+        ██▓▓╔══════════════════════════════════╗▓▓██
+        ██▓▓║  E V E N T   H O R I Z O N       ║▓▓██
+        ██▓▓║      C R O S S E D               ║▓▓██
+        ██▓▓╚══════════════════════════════════╝▓▓██
+        ██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
+        ████████████████████████████████████████████
+        `}</pre>
     ),
   };
 
@@ -185,7 +209,7 @@ export function ContactSection() {
           </CardHeader>
           <CardContent
             ref={terminalRef}
-            className="p-4 h-80 overflow-y-auto"
+            className="p-4 h-96 overflow-y-auto"
             onClick={() => inputRef.current?.focus()}
           >
             <div className="space-y-4 text-sm">
