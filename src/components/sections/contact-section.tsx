@@ -65,7 +65,7 @@ export function ContactSection() {
     if (!WEB3FORMS_ACCESS_KEY) {
       toast.error('Configuration Error', {
         description:
-          'Please replace the placeholder Web3Forms access key in the contact section component.',
+          'The Web3Forms access key is not configured. Please check your .env.local file.',
       });
       return;
     }
@@ -103,6 +103,8 @@ export function ContactSection() {
         });
       }
     } catch (error) {
+      // THE FIX IS HERE: We are now using the 'error' variable.
+      console.error('Form submission error:', error);
       toast.error('Network Error', {
         id: toastId,
         description:
@@ -112,8 +114,6 @@ export function ContactSection() {
       setIsSubmitting(false);
     }
   };
-
-  // ... (The rest of the file is the same, no changes needed below this line)
 
   const commands: { [key: string]: () => React.ReactNode } = {
     help: () => (
@@ -284,8 +284,8 @@ export function ContactSection() {
               <p>Welcome to my interactive contact terminal.</p>
               {lastLoginDate && <p>Last login: {lastLoginDate}</p>}
               <p>
-                Type <span className="text-green-400">'help'</span> for a list
-                of available commands.
+                Type <span className="text-green-400">&apos;help&apos;</span>{' '}
+                for a list of available commands.
               </p>
               {history.map((item) => (
                 <div key={item.id}>
