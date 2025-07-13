@@ -40,7 +40,7 @@ export const projects: Project[] = [
     media: [
       {
         type: 'image',
-        url: '/laufer.png',
+        url: '/laufer2.png',
       },
     ],
     tags: ['Astro', 'JavaScript', 'GSAP', 'Framer Motion'],
