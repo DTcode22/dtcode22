@@ -20,7 +20,7 @@ export function AboutSection() {
             <code className="tracking-tighter">Hello world,</code>
             <code className="tracking-tighter whitespace-nowrap">
               I&apos;m Dejan
-              <span className="inline-block">&#128075;</span>
+              <span className="inline-block animate-wave">&#128075;</span>
             </code>
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
