@@ -320,6 +320,7 @@ export function ContactSection() {
                   autoComplete="off"
                   className="bg-transparent border-none text-white focus:ring-0 w-full p-0 pl-2"
                 />
+                <button type="submit" className="hidden" />
               </form>
             </div>
           </CardContent>
