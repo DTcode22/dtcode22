@@ -24,9 +24,42 @@ type HistoryItem = {
   output: React.ReactNode;
 };
 
+const initialHelpOutput = (
+  <div className="space-y-1">
+    <p>Available commands:</p>
+    <ul className="list-disc list-inside pl-2">
+      <li>
+        <span className="text-green-400">socials</span> - Display social media
+        links
+      </li>
+      <li>
+        <span className="text-green-400">email</span> - Show my email address
+      </li>
+      <li>
+        <span className="text-green-400">message</span> - Open the contact form
+      </li>
+      <li>
+        <span className="text-green-400">clear</span> - Clear the terminal
+      </li>
+      <li>
+        <span className="text-green-400">cat</span> - ???
+      </li>
+      <li>
+        <span className="text-green-400">help</span> - Show this help message
+      </li>
+    </ul>
+  </div>
+);
+
 export function ContactSection() {
   const [input, setInput] = useState('');
-  const [history, setHistory] = useState<HistoryItem[]>([]);
+  const [history, setHistory] = useState<HistoryItem[]>([
+    {
+      id: 1,
+      command: 'help',
+      output: initialHelpOutput,
+    },
+  ]);
   const [showForm, setShowForm] = useState(false);
   const [lastLoginDate, setLastLoginDate] = useState('');
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -116,35 +149,7 @@ export function ContactSection() {
   };
 
   const commands: { [key: string]: () => React.ReactNode } = {
-    help: () => (
-      <div className="space-y-1">
-        <p>Available commands:</p>
-        <ul className="list-disc list-inside pl-2">
-          <li>
-            <span className="text-green-400">socials</span> - Display social
-            media links
-          </li>
-          <li>
-            <span className="text-green-400">email</span> - Show my email
-            address
-          </li>
-          <li>
-            <span className="text-green-400">message</span> - Open the contact
-            form
-          </li>
-          <li>
-            <span className="text-green-400">clear</span> - Clear the terminal
-          </li>
-          <li>
-            <span className="text-green-400">cat</span> - ???
-          </li>
-          <li>
-            <span className="text-green-400">help</span> - Show this help
-            message
-          </li>
-        </ul>
-      </div>
-    ),
+    help: () => initialHelpOutput,
     socials: () => (
       <div className="flex flex-col sm:flex-row gap-4">
         <Link

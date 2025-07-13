@@ -16,11 +16,12 @@ export function AboutSection() {
     <div className="space-y-16">
       <section id="introduction" className="scroll-mt-20 space-y-6 mb-32">
         <div className="text-center space-y-6">
-          <h1 className="text-4xl lg:text-6xl font-bold">
-            <code className="tracking-tighter">
-              Hello world, I&apos;m Dejan
+          <h1 className="text-4xl lg:text-5xl font-bold flex flex-wrap justify-center items-center gap-x-4">
+            <code className="tracking-tighter">Hello world,</code>
+            <code className="tracking-tighter whitespace-nowrap">
+              I&apos;m Dejan
+              <span className="inline-block">&#128075;</span>
             </code>
-            <span className="font-size:100px;">&#128075;</span>
           </h1>
           <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto">
             A software engineer turning chaos into code
