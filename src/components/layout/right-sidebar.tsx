@@ -211,24 +211,7 @@ export function RightSidebar({ activeSection }: TableOfContentsProps) {
             <CardTitle className="text-lg">Latest Posts</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div>
-              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
-                Building Scalable React Apps
-              </h4>
-              <p className="text-xs text-muted-foreground">Jan 15, 2024</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
-                Next.js 14 Features
-              </h4>
-              <p className="text-xs text-muted-foreground">Jan 10, 2024</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-sm mb-1 hover:text-primary cursor-pointer transition-colors">
-                TypeScript Best Practices
-              </h4>
-              <p className="text-xs text-muted-foreground">Jan 5, 2024</p>
-            </div>
+            <div>No posts at the moment.</div>
           </CardContent>
         </Card>
       </div>

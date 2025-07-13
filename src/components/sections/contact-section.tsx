@@ -242,10 +242,10 @@ export function ContactSection() {
   };
 
   return (
-    <div className="space-y-24 pb-16">
+    <div className="space-y-24 pb-12">
       {/* Header */}
       <section id="contact-intro" className="scroll-mt-20 space-y-6">
-        <div className="text-center space-y-4">
+        <div className="text-center">
           <h1 className="text-4xl lg:text-5xl font-bold">
             <code>Contact</code>
           </h1>

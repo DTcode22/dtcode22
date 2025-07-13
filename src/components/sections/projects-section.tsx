@@ -13,8 +13,8 @@ export function ProjectsSection() {
     <div className="space-y-16 pb-16">
       {/* Featured Projects Section */}
       <section id="featured-projects" className="scroll-mt-20">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Featured Projects
+        <h2 className="text-5xl font-bold text-center mb-16">
+          <code>Featured Projects</code>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
@@ -105,7 +105,9 @@ export function ProjectsSection() {
 
       {/* Other Projects Section */}
       <section id="other-projects" className="scroll-mt-20 space-y-8">
-        <h2 className="text-3xl font-bold">Other Notable Projects</h2>
+        <h2 className="text-3xl font-bold">
+          <code>Other Notable Projects</code>
+        </h2>
         <div className="space-y-6">
           {otherProjects.map((project, index) => (
             <Card
