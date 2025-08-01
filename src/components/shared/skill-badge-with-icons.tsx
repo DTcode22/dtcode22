@@ -22,6 +22,7 @@ import {
   SiGooglesearchconsole,
   SiLighthouse,
   SiAstro,
+  SiExpo,
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import { RiNodejsLine, RiSvelteLine } from 'react-icons/ri';
@@ -54,6 +55,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Java: <FaJava className="w-4 h-4 text-orange-600" />,
   Kotlin: <SiKotlin className="w-4 h-4 text-purple-500" />,
   AndroidStudio: <FaAndroid className="w-4 h-5 text-green-600" />,
+  Expo: <SiExpo className="w-4 h-5 text-gray-600" />,
   SQL: <TbSql className="w-5 h-5 text-blue-400" />,
   Docker: <SiDocker className="w-5 h-5 text-blue-400" />,
   Linux: <SiLinux className="w-4 h-4 text-yellow-600" />,

@@ -18,6 +18,7 @@ export const skillsAndTools = [
   { name: 'Java' },
   { name: 'Kotlin' },
   { name: 'AndroidStudio' },
+  { name: 'Expo' },
   { name: 'SQL' },
   { name: 'Docker' },
   { name: 'Linux' },
