@@ -95,11 +95,11 @@ export function AboutSection() {
           <div className="flex items-center gap-1 pb-2 pl-18 not-sm:pl-0">
             <ChevronRight className="not-sm:hidden"></ChevronRight>
             <a
-              href="https://github.com/supdiff"
+              href="https://github.com/DTcode22/dtcode22"
               target="_blank"
               className="flex items-center gap-1 underline"
             >
-              https://github.com/supdiff/dtc-portfolio
+              https://github.com/DTcode22/dtcode22
               <ExternalLink
                 height={12}
                 width={12}
@@ -127,7 +127,7 @@ export function AboutSection() {
               <CardTitle>Full Stack Developer</CardTitle>
               <CardDescription>gastarbajter24 • 2024</CardDescription>
               <div className="wrap flex items-center gap-1 text-muted-foreground text-sm">
-                <MapPin height={14} width={14}></MapPin>De • Remote
+                <MapPin height={14} width={14}></MapPin>Remote
               </div>
             </CardHeader>
             <CardContent>
@@ -153,7 +153,7 @@ export function AboutSection() {
               <CardTitle>Freelance Work</CardTitle>
               <CardDescription>Self Emp • 2023 - Present</CardDescription>
               <div className="wrap flex items-center gap-1 text-muted-foreground text-sm">
-                <MapPin height={14} width={14}></MapPin>BiH • Srb • Remote
+                <MapPin height={14} width={14}></MapPin>Remote
               </div>
             </CardHeader>
             <CardContent>

@@ -30,7 +30,7 @@ const sectionHeadings = {
   ],
   contact: [
     { id: 'contact-intro', title: 'Introduction' },
-    { id: 'interactive-terminal', title: 'Interactive Terminal' },
+    { id: 'interactive-terminal', title: 'Terminal' },
     { id: 'message-form', title: 'Direct Message' },
     { id: 'navigation', title: 'Navigation' },
   ],
