@@ -14,26 +14,9 @@ export const skillsAndTools = [
   { name: 'Postman' },
   { name: 'Git' },
   { name: 'GitHub' },
-  { name: 'Python' },
-  { name: 'Java' },
   { name: 'Kotlin' },
-  { name: 'AndroidStudio' },
   { name: 'Expo' },
   { name: 'SQL' },
   { name: 'Docker' },
   { name: 'Linux' },
-  { name: 'Figma' },
-  { name: 'GSC' },
-  { name: 'Lighthouse' },
-  { name: 'Vercel' },
-  { name: 'VSCode' },
-  { name: 'Cursor' },
-  { name: 'Gemini' },
 ];
-
-export const technologies = {
-  frontend: ['React', 'Next.js', 'Vue.js', 'TypeScript'],
-  backend: ['Node.js', 'Python', 'Express', 'FastAPI'],
-  database: ['PostgreSQL', 'MongoDB', 'Redis', 'Firebase'],
-  tools: ['Docker', 'AWS', 'Git', 'Figma'],
-};
